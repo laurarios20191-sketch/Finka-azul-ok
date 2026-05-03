@@ -303,8 +303,18 @@ export default function App() {
           </div>
         </section>
 
+        {/* Wave Divider - Hero to Hecho con Amor */}
+        <div className="relative w-full -mb-1">
+          <svg className="w-full h-20 lg:h-32" viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path 
+              d="M0,60 C240,120 480,0 720,60 C960,120 1200,0 1440,60 L1440,120 L0,120 Z" 
+              fill="#2AACB8"
+            />
+          </svg>
+        </div>
+
         {/* Hecho con Amor Section */}
-        <section id="amor" className="relative py-20 lg:py-28 bg-[#2AACB8] overflow-hidden">
+        <section id="amor" className="relative pt-12 lg:pt-16 pb-20 lg:pb-28 bg-[#2AACB8] overflow-hidden">
           <div className="max-w-[1280px] mx-auto px-8 lg:px-20 relative">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
               {/* Content */}
@@ -783,7 +793,7 @@ export default function App() {
                   />
                 </div>
                 <p className="font-['Lora',serif] text-[15px] text-black leading-[1.6] transition-opacity duration-300 hover:opacity-80">
-                  Un refugio rural en el corazón del Caribe. Reconecta con la naturaleza en Patillas, Puerto Rico.
+                  Un refugio rural en el coraz��n del Caribe. Reconecta con la naturaleza en Patillas, Puerto Rico.
                 </p>
               </div>
 
