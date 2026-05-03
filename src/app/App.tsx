@@ -157,8 +157,8 @@ export default function App() {
       {/* Header */}
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled 
-          ? 'bg-white/95 backdrop-blur-sm border-b border-[#3795b4]/20 shadow-sm' 
-          : 'bg-black/20 backdrop-blur-sm border-b border-white/10'
+          ? 'bg-white/95 backdrop-blur-sm border-b border-[#4ECDC4] shadow-sm' 
+          : 'bg-black/20 backdrop-blur-sm border-b border-[#4ECDC4]'
       }`}>
         <div className="max-w-[1280px] mx-auto px-8 lg:px-20 py-5 flex items-center justify-between">
           {/* Logo - SOLO en header */}
@@ -281,14 +281,14 @@ export default function App() {
           <div className="relative z-10 h-full flex flex-col items-start justify-center px-8 lg:px-20 xl:px-28 text-left pt-24 lg:pt-32">
             <div className="max-w-[650px] flex flex-col">
               <h1 className="font-['Playfair_Display',serif] font-normal text-white text-[48px] lg:text-[72px] xl:text-[80px] leading-[1.1] drop-shadow-lg">
-                Un refugio rural en el corazón del Caribe
+                Un refugio rural en el corazón del <span className="text-[#F5C842]">Caribe</span>
               </h1>
-              <p className="font-['Jost',sans-serif] font-extralight text-[15px] lg:text-[17px] text-white/80 leading-[1.7] drop-shadow-md max-w-[500px] mt-6">
+              <p className="font-['Jost',sans-serif] font-extralight text-[15px] lg:text-[17px] text-white/80 leading-[1.7] drop-shadow-md max-w-[500px] mt-6 pl-5 border-l-[3px] border-[#4ECDC4]">
                 Reconecta con la tierra, respira aire puro y vive el ritmo pausado de la naturaleza en nuestro espacio eco-rural en Patillas, Puerto Rico.
               </p>
               <button
                 onClick={() => scrollToSection('reserva')}
-                className="inline-block px-8 py-3 bg-[#f4d03f] rounded-full font-['Inter',sans-serif] font-medium text-[16px] text-black transition-all duration-300 hover:bg-[#e5c236] hover:shadow-lg hover:scale-105 hover:-translate-y-1 mt-10 w-fit"
+                className="inline-block px-8 py-3 bg-[#f4d03f] rounded-full font-['Inter',sans-serif] font-medium text-[16px] text-black transition-all duration-300 hover:bg-[#e5c236] hover:scale-105 hover:-translate-y-1 mt-10 w-fit shadow-[0_4px_20px_rgba(245,200,66,0.4)] hover:shadow-[0_6px_25px_rgba(245,200,66,0.6)]"
               >
                 Reserva ahora
               </button>
