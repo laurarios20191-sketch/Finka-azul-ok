@@ -296,79 +296,55 @@ export default function App() {
           </div>
 
           {/* Scroll indicator */}
-          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
+          <div className="absolute bottom-40 left-1/2 -translate-x-1/2 z-10 animate-bounce">
             <svg className="w-6 h-6 text-white/70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
             </svg>
           </div>
+
+          {/* Gradient fade to turquoise */}
+          <div className="absolute bottom-0 left-0 right-0 h-[150px] bg-gradient-to-b from-transparent to-[#2AACB8] pointer-events-none" />
         </section>
 
         {/* Hecho con Amor Section */}
-        <section id="amor" className="relative py-20 lg:py-28 bg-[#a8d8d8] overflow-hidden">
-          {/* Clear vertical line texture - like stripes, won't interfere with text */}
-          <div className="absolute inset-0 pointer-events-none opacity-15">
-            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-              {/* Vertical stripes */}
-              {Array.from({ length: 50 }).map((_, i) => (
-                <line
-                  key={`vert-${i}`}
-                  x1={i * 40}
-                  y1="0"
-                  x2={i * 40}
-                  y2="100%"
-                  stroke="#3795b4"
-                  strokeWidth="20"
-                  opacity="0.3"
-                />
-              ))}
-            </svg>
-          </div>
-
+        <section id="amor" className="relative py-28 lg:py-40 bg-[#2AACB8] overflow-hidden">
           <div className="max-w-[1280px] mx-auto px-8 lg:px-20 relative">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
               {/* Content */}
-              <div className="space-y-6">
-                <h2 className="font-['Fraunces',serif] font-normal text-[#3795b4] text-[36px] lg:text-[44px] leading-[1.15] transition-all duration-300 hover:text-[#2e7a91]">
+              <div className="space-y-8 text-left">
+                <h2 className="font-['Fraunces',serif] font-normal italic text-white text-[36px] lg:text-[48px] leading-[1.1]">
                   Hecho con amor
                 </h2>
-                <p className="font-['Lora',serif] font-normal text-[17px] text-black leading-[1.6] transition-opacity duration-300 hover:opacity-80">
+                <p className="font-['Lora',serif] font-normal text-[16px] lg:text-[17px] text-white leading-[1.8]">
                   Finka Azul nació del deseo profundo de Don Antonio y Elba de crear un lugar que reflejara su filosofía de vida: una forma de habitar el mundo con calma y respeto por la naturaleza. Cada rincón de la finca fue pensado para que quienes la visitan puedan conectar con esa esencia, vivir experiencias auténticas y sentir la serenidad que ellos han cultivado.
                 </p>
+                {/* Conoce nuestra historia link */}
+                <a href="#experiencia" className="inline-flex items-center gap-2 font-['DM_Sans',sans-serif] font-medium text-[15px] text-white underline decoration-[#F5C842] decoration-2 underline-offset-4 hover:decoration-white transition-all duration-300 group">
+                  Conoce nuestra historia
+                  <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </a>
               </div>
 
-              {/* Image */}
+              {/* Image - larger with drop shadow instead of frame */}
               <div className="relative group">
-                {/* Editorial frame - MORE VISIBLE, THICKER */}
-                <div className="absolute -inset-4 border-[5px] border-[#f4d03f] rounded-lg transition-all duration-500 group-hover:scale-[1.02]" style={{
-                  transform: 'rotate(1deg)'
-                }} />
-                
-                <div className="relative rounded-lg overflow-hidden shadow-xl transition-all duration-500 group-hover:shadow-2xl">
+                <div className="relative rounded-2xl overflow-hidden shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25)] transition-all duration-500 group-hover:shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]">
                   <img
                     src={imgRectangle7}
                     alt="Don Antonio y Elba en la finca"
-                    className="w-full h-[400px] lg:h-[540px] object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-[450px] lg:h-[600px] object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
               </div>
             </div>
           </div>
+          {/* Gradient fade to next section */}
+          <div className="absolute bottom-0 left-0 right-0 h-[150px] bg-gradient-to-b from-transparent to-[#f7f3e8] pointer-events-none" />
         </section>
 
-        {/* Wavy Separator */}
-        <div className="relative bg-[#a8d8d8]">
-          <svg className="w-full h-16 lg:h-24" viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0,0 C320,100 420,100 720,50 C1020,0 1120,0 1440,100 L1440,100 L0,100 Z" fill="#f7f3e8" />
-          </svg>
-        </div>
-
         {/* La Experiencia Section */}
-        <section id="experiencia" className="relative py-20 lg:py-28 bg-[#f7f3e8] overflow-hidden">
-          {/* Subtle dot pattern */}
-          <div className="absolute inset-0 opacity-[0.02] pointer-events-none" style={{
-            backgroundImage: `radial-gradient(circle, #000 1px, transparent 1px)`,
-            backgroundSize: '24px 24px'
-          }} />
+        <section id="experiencia" className="relative py-20 bg-white overflow-hidden">
 
           <div className="max-w-[1280px] mx-auto px-8 lg:px-20 relative">
             {/* Header */}
@@ -383,114 +359,62 @@ export default function App() {
 
             {/* Features Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8 relative">
-              {/* Desconexión real - Turquesa pastel */}
-              <div className="relative p-8 rounded-2xl bg-[#d4eeeb] transition-all duration-500 hover:shadow-xl hover:scale-[1.02] group overflow-hidden border border-[#b8ddd8]">
-                {/* Decorative palm leaf pattern */}
-                <div className="absolute -right-8 -top-8 w-32 h-32 opacity-[0.08]">
-                  <svg viewBox="0 0 100 100" fill="currentColor" className="text-[#2d5a52]">
-                    <path d="M50,10 Q30,30 20,60 Q40,50 50,50 Q60,50 80,60 Q70,30 50,10 Z" />
-                  </svg>
-                </div>
-                {/* Icon - Palm tree for disconnection */}
-                <div className="w-14 h-14 rounded-full bg-[#a8d5cf] flex items-center justify-center mb-6 transition-all duration-500 group-hover:scale-110 group-hover:bg-[#8ec5bd]">
-                  <svg className="w-7 h-7 text-[#2d5a52]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 3c-1.5 2-3 4-3 6s1.5 3 3 3 3-1 3-3-1.5-4-3-6zM12 12v9M8 21h8M6 8c-2 0-4 1-4 3s2 2 4 1M18 8c2 0 4 1 4 3s-2 2-4 1M4 5c1 1 3 2 5 1M20 5c-1 1-3 2-5 1" />
-                  </svg>
-                </div>
-                <h3 className="font-['Fraunces',serif] font-normal text-[28px] text-[#2d3a38] leading-[1.2] mb-4 transition-colors duration-300">
+              {/* Desconexión real */}
+              <div className="relative p-8 rounded-xl bg-white shadow-[0_4px_20px_rgba(0,0,0,0.08)] transition-all duration-500 hover:shadow-[0_8px_30px_rgba(0,0,0,0.12)] hover:scale-[1.02] border-t-4 border-[#2AACB8]">
+                <span className="text-4xl mb-6 block">🌿</span>
+                <h3 className="font-['Fraunces',serif] font-normal text-[28px] text-[#1a1a1a] leading-[1.2] mb-4">
                   Desconexión real
                 </h3>
-                <p className="font-['Lora',serif] font-normal text-[16px] text-[#3d4a47] leading-[1.6]">
+                <p className="font-['Lora',serif] font-normal text-[16px] text-[#444] leading-[1.6]">
                   Privacidad total, cero tráfico y sonidos completamente naturales.
                   <br /><br />
                   Un descanso que no se encuentra en hoteles ni zonas turísticas.
                 </p>
               </div>
 
-              {/* Agricultura sostenible - Verde salvia suave */}
-              <div className="relative p-8 rounded-2xl bg-[#dce8dc] transition-all duration-500 hover:shadow-xl hover:scale-[1.02] group overflow-hidden border border-[#c5d9c5]">
-                {/* Decorative leaf pattern */}
-                <div className="absolute -right-8 -top-8 w-32 h-32 opacity-[0.08]">
-                  <svg viewBox="0 0 100 100" fill="currentColor" className="text-[#3d5a3d]">
-                    <path d="M50,10 Q30,30 20,60 Q40,50 50,50 Q60,50 80,60 Q70,30 50,10 Z" />
-                  </svg>
-                </div>
-                {/* Icon - Leaf/Plant for agriculture */}
-                <div className="w-14 h-14 rounded-full bg-[#b8d4b8] flex items-center justify-center mb-6 transition-all duration-500 group-hover:scale-110 group-hover:bg-[#a3c9a3]">
-                  <svg className="w-7 h-7 text-[#3d5a3d]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 21c0-6 4-10 9-10-5 0-9-4-9-10 0 6-4 10-9 10 5 0 9 4 9 10z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 21V11" />
-                  </svg>
-                </div>
-                <h3 className="font-['Fraunces',serif] font-normal text-[28px] text-[#2d3a2d] leading-[1.2] mb-4 transition-colors duration-300">
+              {/* Agricultura sostenible */}
+              <div className="relative p-8 rounded-xl bg-white shadow-[0_4px_20px_rgba(0,0,0,0.08)] transition-all duration-500 hover:shadow-[0_8px_30px_rgba(0,0,0,0.12)] hover:scale-[1.02] border-t-4 border-[#2AACB8]">
+                <span className="text-4xl mb-6 block">🌱</span>
+                <h3 className="font-['Fraunces',serif] font-normal text-[28px] text-[#1a1a1a] leading-[1.2] mb-4">
                   Agricultura sostenible
                 </h3>
-                <p className="font-['Lora',serif] font-normal text-[16px] text-[#3d4a3d] leading-[1.6]">
+                <p className="font-['Lora',serif] font-normal text-[16px] text-[#444] leading-[1.6]">
                   Más de 12 jardines ornamentales, áreas agrícolas y un cultivo responsable que revive el suelo y atrae vida.
                 </p>
               </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative">
-              {/* El agua como recurso sagrado - Azul cielo claro */}
-              <div className="relative p-8 rounded-2xl bg-[#dbe9f4] transition-all duration-500 hover:shadow-xl hover:scale-[1.02] group overflow-hidden border border-[#c4d9eb]">
-                {/* Decorative wave pattern */}
-                <div className="absolute -right-8 -bottom-8 w-32 h-32 opacity-[0.08]">
-                  <svg viewBox="0 0 100 100" fill="currentColor" className="text-[#2d4a5a]">
-                    <path d="M0,50 Q25,30 50,50 T100,50 L100,100 L0,100 Z" />
-                  </svg>
-                </div>
-                {/* Icon - Water droplet */}
-                <div className="w-14 h-14 rounded-full bg-[#b5d4e8] flex items-center justify-center mb-6 transition-all duration-500 group-hover:scale-110 group-hover:bg-[#9cc5de]">
-                  <svg className="w-7 h-7 text-[#2d4a5a]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 21c-4 0-7-3-7-7 0-5 7-11 7-11s7 6 7 11c0 4-3 7-7 7z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 18c-2 0-4-1.5-4-4" />
-                  </svg>
-                </div>
-                <h3 className="font-['Fraunces',serif] font-normal text-[28px] text-[#2d3a40] leading-[1.2] mb-4 transition-colors duration-300">
+              {/* El agua como recurso sagrado */}
+              <div className="relative p-8 rounded-xl bg-white shadow-[0_4px_20px_rgba(0,0,0,0.08)] transition-all duration-500 hover:shadow-[0_8px_30px_rgba(0,0,0,0.12)] hover:scale-[1.02] border-t-4 border-[#2AACB8]">
+                <span className="text-4xl mb-6 block">💧</span>
+                <h3 className="font-['Fraunces',serif] font-normal text-[28px] text-[#1a1a1a] leading-[1.2] mb-4">
                   El agua como recurso sagrado
                 </h3>
-                <p className="font-['Lora',serif] font-normal text-[16px] text-[#3d4a50] leading-[1.6]">
+                <p className="font-['Lora',serif] font-normal text-[16px] text-[#444] leading-[1.6]">
                   Dos quebradas bordean la finca y crean un ambiente fresco; el agua que utilizamos proviene del manantial y de la lluvia recolectada, cada gota se valora.
                 </p>
               </div>
 
-              {/* Comida típica - Amarillo arena cálido */}
-              <div className="relative p-8 rounded-2xl bg-[#f5edd8] transition-all duration-500 hover:shadow-xl hover:scale-[1.02] group overflow-hidden border border-[#e8dfc5]">
-                {/* Decorative fruit pattern */}
-                <div className="absolute -right-8 -top-8 w-32 h-32 opacity-[0.08]">
-                  <svg viewBox="0 0 100 100" fill="currentColor" className="text-[#6b5a3d]">
-                    <circle cx="50" cy="50" r="30" />
-                  </svg>
-                </div>
-                {/* Icon - Tropical fruit/food */}
-                <div className="w-14 h-14 rounded-full bg-[#e8dbb8] flex items-center justify-center mb-6 transition-all duration-500 group-hover:scale-110 group-hover:bg-[#dccfa3]">
-                  <svg className="w-7 h-7 text-[#6b5a3d]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 6c3 0 5 2 5 5 0 4-2 8-5 10-3-2-5-6-5-10 0-3 2-5 5-5z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 6V3M10 4c1-1 3-1 4 0" />
-                  </svg>
-                </div>
-                <h3 className="font-['Fraunces',serif] font-normal text-[28px] text-[#3d3a2d] leading-[1.2] mb-4 transition-colors duration-300">
+              {/* Comida típica */}
+              <div className="relative p-8 rounded-xl bg-white shadow-[0_4px_20px_rgba(0,0,0,0.08)] transition-all duration-500 hover:shadow-[0_8px_30px_rgba(0,0,0,0.12)] hover:scale-[1.02] border-t-4 border-[#2AACB8]">
+                <span className="text-4xl mb-6 block">🍽️</span>
+                <h3 className="font-['Fraunces',serif] font-normal text-[28px] text-[#1a1a1a] leading-[1.2] mb-4">
                   Comida típica
                 </h3>
-                <p className="font-['Lora',serif] font-normal text-[16px] text-[#4a473d] leading-[1.6]">
+                <p className="font-['Lora',serif] font-normal text-[16px] text-[#444] leading-[1.6]">
                   Con ingredientes cosechados en la finca, la Chef Elba transforma lo simple en platos llenos de sabor puertorriqueño, tradición y cariño.
                 </p>
               </div>
             </div>
           </div>
+
+          {/* Gradient fade to next section */}
+          <div className="absolute bottom-0 left-0 right-0 h-[150px] bg-gradient-to-b from-transparent to-[#E8F6F8] pointer-events-none" />
         </section>
 
         {/* Kabaña Azul Section */}
-        <section id="kabana" className="relative py-20 lg:py-28 bg-[#a8d8d8] overflow-hidden">
-          {/* Wave pattern background */}
-          <div className="absolute bottom-0 left-0 w-full h-48 opacity-[0.06] pointer-events-none">
-            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-              <path d="M0,80 Q150,60 300,80 T600,80 T900,80 T1200,80 T1500,80" stroke="#3795b4" strokeWidth="2" fill="none"/>
-              <path d="M0,100 Q150,80 300,100 T600,100 T900,100 T1200,100 T1500,100" stroke="#3795b4" strokeWidth="2" fill="none" opacity="0.5"/>
-              <path d="M0,120 Q150,100 300,120 T600,120 T900,120 T1200,120 T1500,120" stroke="#3795b4" strokeWidth="2" fill="none" opacity="0.3"/>
-            </svg>
-          </div>
+        <section id="kabana" className="relative py-20 bg-[#E8F6F8] overflow-hidden">
 
           <div className="max-w-[1280px] mx-auto px-8 lg:px-20 relative">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
@@ -594,39 +518,20 @@ export default function App() {
 
               {/* Image */}
               <div className="relative lg:mt-8 group">
-                {/* Hand-drawn frame effect - THICKER, MORE VISIBLE */}
-                <div className="absolute -inset-4 border-[5px] border-[#3795b4] rounded-lg transition-transform duration-500 group-hover:scale-[1.02]" style={{
-                  transform: 'rotate(-0.5deg)'
-                }} />
-                
-                <div className="relative rounded-lg overflow-hidden shadow-xl transition-all duration-500 group-hover:shadow-2xl">
+                <div className="relative rounded-xl overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.12)] transition-all duration-500 group-hover:shadow-[0_12px_40px_rgba(0,0,0,0.18)]">
                   <img
                     src={imgRectangle5}
                     alt="Interior Kabaña Azul"
                     className="w-full h-[400px] lg:h-[540px] object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
-
-                {/* Decorative sun stamp - top right - BIGGER */}
-                <SunStamp 
-                  className="absolute -top-14 -right-14 transition-all duration-500 hover:rotate-[25deg] hover:scale-110" 
-                  rotation={15}
-                />
-                
-                {/* Additional circle decoration */}
-                <div className="absolute bottom-10 -left-8 size-[50px] rounded-full border-[3px] border-[#a8d8d8] opacity-70 transition-all duration-700 group-hover:scale-125" />
               </div>
             </div>
           </div>
         </section>
 
         {/* Patillas Location Section */}
-        <section className="relative py-20 lg:py-28 bg-[#c7e0e5] overflow-hidden">
-          {/* Subtle dot pattern */}
-          <div className="absolute inset-0 opacity-[0.02] pointer-events-none" style={{
-            backgroundImage: `radial-gradient(circle, #000 1px, transparent 1px)`,
-            backgroundSize: '24px 24px'
-          }} />
+        <section className="relative py-20 bg-[#E8F6F8] overflow-hidden">
 
           <div className="max-w-[1280px] mx-auto px-8 lg:px-20 relative">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -634,10 +539,10 @@ export default function App() {
               <div className="space-y-8">
                 {/* Heading */}
                 <div>
-                  <h2 className="font-['Fraunces',serif] font-semibold text-[36px] lg:text-[44px] text-[#3795b4] leading-[1.2] max-w-[600px] transition-all duration-300 hover:text-[#2e7a91]">
-                    Un paisaje donde se encuentran el mar y la montaña
+                  <h2 className="font-['Fraunces',serif] font-semibold text-[32px] lg:text-[40px] text-[#1a1a1a] leading-[1.2] transition-all duration-300">
+                    Donde el mar y la montaña se encuentran
                   </h2>
-                  <div className="bg-[#3795b4] h-[4px] w-[100px] mt-6 rounded-full transition-all duration-500 hover:w-[120px]" />
+                  <div className="bg-[#2AACB8] h-[3px] w-[80px] mt-5 rounded-full" />
                 </div>
 
                 {/* Description paragraphs */}
@@ -722,12 +627,7 @@ export default function App() {
 
               {/* Image */}
               <div className="relative group">
-                {/* Frame effect */}
-                <div className="absolute -inset-4 border-[5px] border-[#3795b4] rounded-lg transition-all duration-500 group-hover:scale-[1.02]" style={{
-                  transform: 'rotate(0.5deg)'
-                }} />
-                
-                <div className="relative rounded-lg overflow-hidden shadow-xl transition-all duration-500 group-hover:shadow-2xl">
+                <div className="relative rounded-xl overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.12)] transition-all duration-500 group-hover:shadow-[0_12px_40px_rgba(0,0,0,0.18)]">
                   <img
                     src={imgPatillasBeach}
                     alt="Paisaje costero de Patillas"
@@ -737,37 +637,35 @@ export default function App() {
               </div>
             </div>
           </div>
+
+          {/* Gradient fade to next section */}
+          <div className="absolute bottom-0 left-0 right-0 h-[150px] bg-gradient-to-b from-transparent to-white pointer-events-none" />
         </section>
 
-        {/* CTA Section - CLEAN DESIGN INSPIRED BY FIGMA */}
-        <section id="reserva" className="relative py-20 lg:py-32 bg-[#f7f3e8] overflow-hidden">
-          {/* Subtle texture overlay */}
-          <div className="absolute inset-0 opacity-[0.015] pointer-events-none" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-          }} />
-
+        {/* CTA Section - CLEAN DESIGN */}
+        <section id="reserva" className="relative py-20 bg-white overflow-hidden">
           <div className="max-w-[1100px] mx-auto px-8 lg:px-20 relative">
-            <div className="flex flex-col items-center text-center space-y-12">
+            <div className="flex flex-col items-center text-center space-y-8">
               {/* Top tagline */}
-              <h3 className="font-['Fraunces',serif] font-semibold text-[#3795b4] text-[36px] lg:text-[44px] leading-[1.2] max-w-[900px] transition-all duration-300 hover:text-[#2e7a91]">
+              <h3 className="font-['Fraunces',serif] font-semibold text-[#2AACB8] text-[28px] lg:text-[36px] leading-[1.2] max-w-[900px]">
                 Un lujo diferente, desconectar para conectar
               </h3>
 
-              {/* Calendar Icon */}
-              <CalendarIcon className="transition-all duration-500 hover:scale-110" />
+              {/* Horizontal line divider */}
+              <div className="w-24 h-[2px] bg-[#2AACB8]" />
 
               {/* Main Heading */}
-              <h2 className="font-['Fraunces',serif] font-semibold text-[36px] lg:text-[44px] text-black leading-[1.2] max-w-[700px]">
+              <h2 className="font-['Fraunces',serif] font-semibold text-[32px] lg:text-[40px] text-[#1a1a1a] leading-[1.2] max-w-[700px]">
                 Planea tu estancia en Finka Azul
               </h2>
 
               {/* Description */}
-              <p className="font-['Lora',serif] font-normal text-[17px] text-black leading-[1.6] max-w-[800px]">
+              <p className="font-['Lora',serif] font-normal text-[17px] text-[#444] leading-[1.6] max-w-[800px]">
                 Elige tus fechas, confirma tu reserva y prepárate para una experiencia tranquila rodeada de naturaleza.
               </p>
 
               {/* CTA Button */}
-              <button className="px-10 py-4 bg-[#a8d8d8] rounded-full font-['Fraunces',serif] font-normal text-[18px] text-black leading-[1.4] transition-all duration-300 hover:bg-[#98c8c8] hover:shadow-xl hover:scale-110 hover:-translate-y-1">
+              <button className="px-10 py-4 bg-[#2AACB8] rounded-full font-['DM_Sans',sans-serif] font-medium text-[18px] text-white leading-[1.4] transition-all duration-300 hover:bg-[#239aa5] hover:shadow-xl hover:scale-105 hover:-translate-y-1">
                 Reserva ahora
               </button>
             </div>
@@ -788,7 +686,7 @@ export default function App() {
                   />
                 </div>
                 <p className="font-['Lora',serif] text-[15px] text-black leading-[1.6] transition-opacity duration-300 hover:opacity-80">
-                  Un refugio rural en el corazón del Caribe. Reconecta con la naturaleza en Patillas, Puerto Rico.
+                  Un refugio rural en el coraz��n del Caribe. Reconecta con la naturaleza en Patillas, Puerto Rico.
                 </p>
               </div>
 
