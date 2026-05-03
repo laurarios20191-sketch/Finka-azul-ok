@@ -232,81 +232,49 @@ export default function App() {
         )}
       </header>
 
-      {/* Main Content - starts after header */}
-      <main className="pt-[73px]">
-        {/* Refugio Section - Hero */}
-        <section id="refugio" className="relative py-20 lg:py-28 bg-[#f7f3e8] overflow-hidden">
-          {/* Subtle texture overlay */}
-          <div className="absolute inset-0 opacity-[0.015] pointer-events-none" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-          }} />
+      {/* Main Content */}
+      <main>
+        {/* Refugio Section - Hero with Full Screen Video Background */}
+        <section id="refugio" className="relative h-screen w-full overflow-hidden">
+          {/* Video Background */}
+          <video
+            className="absolute inset-0 w-full h-full object-cover"
+            autoPlay
+            loop
+            muted
+            playsInline
+          >
+            {/* Replace with your actual video URL */}
+            <source src="https://videos.pexels.com/video-files/3571264/3571264-uhd_2560_1440_30fps.mp4" type="video/mp4" />
+            Tu navegador no soporta el elemento de video.
+          </video>
 
-          <div className="max-w-[1280px] mx-auto px-8 lg:px-20 relative">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-              {/* Video Container */}
-              <div className="relative order-2 lg:order-1 group">
-                {/* Hand-drawn frame effect - THICKER, MORE VISIBLE */}
-                <div className="absolute -inset-4 border-[5px] border-[#a8d8d8] rounded-lg transition-transform duration-500 group-hover:scale-[1.02]" style={{
-                  transform: 'rotate(-1deg)'
-                }} />
+          {/* Dark Semi-transparent Overlay */}
+          <div className="absolute inset-0 bg-black/50" />
 
-                <div className="relative rounded-lg overflow-hidden shadow-xl transition-all duration-500 group-hover:shadow-2xl bg-[#3795b4]/10">
-                  {/* Video Placeholder - Replace with actual video */}
-                  <div className="w-full h-[400px] lg:h-[520px] flex items-center justify-center bg-gradient-to-br from-[#a8d8d8]/30 to-[#c7e0e5]/30 relative">
-                    {/* Placeholder content */}
-                    <div className="text-center space-y-4 z-10">
-                      <svg className="mx-auto size-20 text-[#3795b4] opacity-40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                      <p className="font-['Inter',sans-serif] text-[15px] text-[#3795b4]/60 font-medium">
-                        Video con dron de Finka Azul
-                      </p>
-                    </div>
-                    {/* Background pattern */}
-                    <div className="absolute inset-0 opacity-5" style={{
-                      backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20.5V18H0v-2h20v-2H0v-2h20v-2H0V8h20V6H0V4h20V2H0V0h22v20h2V0h2v20h2V0h2v20h2V0h2v20h2V0h2v20h2v2H20v-1.5zM0 20h2v20H0V20zm4 0h2v20H4V20zm4 0h2v20H8V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2z' fill='%233795b4' fill-opacity='1' fill-rule='evenodd'/%3E%3C/svg%3E")`
-                    }} />
-                  </div>
-
-                  {/* Uncomment and replace with your video URL */}
-                  {/* <video
-                    className="w-full h-[400px] lg:h-[520px] object-cover"
-                    controls
-                    poster="/path/to/thumbnail.jpg"
-                  >
-                    <source src="/path/to/drone-video.mp4" type="video/mp4" />
-                    Tu navegador no soporta el elemento de video.
-                  </video> */}
-                </div>
-
-                {/* Decorative stamp - bottom right - BIGGER */}
-                <HandDrawnStamp
-                  className="absolute -bottom-14 -right-14 transition-all duration-500 hover:rotate-[20deg] hover:scale-110"
-                  rotation={12}
-                  color="#a8d8d8"
-                />
-
-                {/* Additional decorative element */}
-                <div className="absolute top-8 -left-6 size-[60px] rounded-full border-[3px] border-[#f4d03f] opacity-60 transition-all duration-700 group-hover:scale-125" />
-              </div>
-
-              {/* Content */}
-              <div className="space-y-6 order-1 lg:order-2">
-                <h1 className="font-['Playfair_Display',serif] font-normal text-[#3795b4] text-[40px] lg:text-[52px] leading-[1.15] transition-all duration-300 hover:text-[#2e7a91]">
-                  Un refugio rural en el corazón del Caribe
-                </h1>
-                <p className="font-['Jost',sans-serif] font-light text-[18px] text-black leading-[1.6] transition-opacity duration-300 hover:opacity-80">
-                  Reconecta con la tierra, respira aire puro y vive el ritmo pausado de la naturaleza en nuestro espacio eco-rural en Patillas, Puerto Rico.
-                </p>
-                <button
-                  onClick={() => scrollToSection('reserva')}
-                  className="inline-block px-8 py-3 bg-[#f4d03f] rounded-full font-['Inter',sans-serif] font-medium text-[16px] text-black transition-all duration-300 hover:bg-[#e5c236] hover:shadow-lg hover:scale-105 hover:-translate-y-1"
-                >
-                  Reserva ahora
-                </button>
-              </div>
+          {/* Content - Centered */}
+          <div className="relative z-10 h-full flex flex-col items-center justify-center px-8 lg:px-20 text-center">
+            <div className="max-w-[800px] space-y-6">
+              <h1 className="font-['Playfair_Display',serif] font-normal text-white text-[40px] lg:text-[56px] leading-[1.15] drop-shadow-lg">
+                Un refugio rural en el corazón del Caribe
+              </h1>
+              <p className="font-['Jost',sans-serif] font-light text-[18px] lg:text-[20px] text-white/90 leading-[1.6] drop-shadow-md max-w-[600px] mx-auto">
+                Reconecta con la tierra, respira aire puro y vive el ritmo pausado de la naturaleza en nuestro espacio eco-rural en Patillas, Puerto Rico.
+              </p>
+              <button
+                onClick={() => scrollToSection('reserva')}
+                className="inline-block px-8 py-3 bg-[#f4d03f] rounded-full font-['Inter',sans-serif] font-medium text-[16px] text-black transition-all duration-300 hover:bg-[#e5c236] hover:shadow-lg hover:scale-105 hover:-translate-y-1 mt-4"
+              >
+                Reserva ahora
+              </button>
             </div>
+          </div>
+
+          {/* Scroll indicator */}
+          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
+            <svg className="w-6 h-6 text-white/70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
           </div>
         </section>
 
