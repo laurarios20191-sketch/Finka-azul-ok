@@ -305,49 +305,59 @@ export default function App() {
 
         {/* Hecho con Amor Section */}
         <section id="amor" className="relative py-20 lg:py-28 bg-[#a8d8d8] overflow-hidden">
-          {/* Clear vertical line texture - like stripes, won't interfere with text */}
-          <div className="absolute inset-0 pointer-events-none opacity-15">
-            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-              {/* Vertical stripes */}
-              {Array.from({ length: 50 }).map((_, i) => (
-                <line
-                  key={`vert-${i}`}
-                  x1={i * 40}
-                  y1="0"
-                  x2={i * 40}
-                  y2="100%"
-                  stroke="#3795b4"
-                  strokeWidth="20"
-                  opacity="0.3"
-                />
-              ))}
-            </svg>
-          </div>
+          {/* Soft diagonal stripe texture for depth */}
+          <div className="absolute inset-0 pointer-events-none opacity-[0.08]" style={{
+            backgroundImage: `repeating-linear-gradient(
+              45deg,
+              transparent,
+              transparent 20px,
+              #3795b4 20px,
+              #3795b4 22px
+            )`
+          }} />
+          {/* Soft noise texture overlay */}
+          <div className="absolute inset-0 pointer-events-none opacity-[0.03]" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`
+          }} />
 
           <div className="max-w-[1280px] mx-auto px-8 lg:px-20 relative">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
               {/* Content */}
               <div className="space-y-6">
-                <h2 className="font-['Fraunces',serif] font-normal text-[#3795b4] text-[36px] lg:text-[44px] leading-[1.15] transition-all duration-300 hover:text-[#2e7a91]">
-                  Hecho con amor
-                </h2>
-                <p className="font-['Lora',serif] font-normal text-[17px] text-black leading-[1.6] transition-opacity duration-300 hover:opacity-80">
+                {/* Title with decorative leaf */}
+                <div className="flex items-center gap-4">
+                  <h2 className="font-['Fraunces',serif] font-normal italic text-[#2d5a52] text-[44px] lg:text-[60px] leading-[1.1] transition-all duration-300 hover:text-[#1e4a42]">
+                    Hecho con amor
+                  </h2>
+                  {/* Hand-drawn tropical leaf decoration */}
+                  <svg className="w-12 h-12 lg:w-16 lg:h-16 text-[#4ECDC4] flex-shrink-0 -mt-2" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M32 8C32 8 20 16 16 28C12 40 16 52 32 56C48 52 52 40 48 28C44 16 32 8 32 8Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" fill="currentColor" fillOpacity="0.15"/>
+                    <path d="M32 8C32 8 28 20 28 32C28 44 32 56 32 56" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                    <path d="M32 20C28 24 24 28 20 30" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                    <path d="M32 20C36 24 40 28 44 30" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                    <path d="M32 32C28 36 24 40 22 44" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                    <path d="M32 32C36 36 40 40 42 44" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                  </svg>
+                </div>
+                <p className="font-['Lora',serif] font-normal text-[16px] lg:text-[17px] text-[#2d3a38] leading-[1.8] transition-opacity duration-300 hover:opacity-80">
                   Finka Azul nació del deseo profundo de Don Antonio y Elba de crear un lugar que reflejara su filosofía de vida: una forma de habitar el mundo con calma y respeto por la naturaleza. Cada rincón de la finca fue pensado para que quienes la visitan puedan conectar con esa esencia, vivir experiencias auténticas y sentir la serenidad que ellos han cultivado.
                 </p>
+                {/* Conoce nuestra historia link */}
+                <a href="#experiencia" className="inline-flex items-center gap-2 font-['DM_Sans',sans-serif] font-medium text-[15px] text-[#F5C842] hover:text-[#e5b832] transition-all duration-300 group">
+                  Conoce nuestra historia
+                  <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </a>
               </div>
 
-              {/* Image */}
+              {/* Image - larger with drop shadow instead of frame */}
               <div className="relative group">
-                {/* Editorial frame - MORE VISIBLE, THICKER */}
-                <div className="absolute -inset-4 border-[5px] border-[#f4d03f] rounded-lg transition-all duration-500 group-hover:scale-[1.02]" style={{
-                  transform: 'rotate(1deg)'
-                }} />
-                
-                <div className="relative rounded-lg overflow-hidden shadow-xl transition-all duration-500 group-hover:shadow-2xl">
+                <div className="relative rounded-2xl overflow-hidden shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25)] transition-all duration-500 group-hover:shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]">
                   <img
                     src={imgRectangle7}
                     alt="Don Antonio y Elba en la finca"
-                    className="w-full h-[400px] lg:h-[540px] object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-[450px] lg:h-[600px] object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
               </div>
