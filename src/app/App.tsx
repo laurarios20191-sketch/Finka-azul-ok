@@ -358,97 +358,97 @@ export default function App() {
 
             {/* Features Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8 relative">
-              {/* Desconexión real - Turquesa */}
-              <div className="relative p-8 rounded-2xl bg-[#40E0D0] transition-all duration-500 hover:shadow-xl hover:scale-[1.02] group overflow-hidden">
+              {/* Desconexión real - Turquesa pastel */}
+              <div className="relative p-8 rounded-2xl bg-[#d4eeeb] transition-all duration-500 hover:shadow-xl hover:scale-[1.02] group overflow-hidden border border-[#b8ddd8]">
                 {/* Decorative palm leaf pattern */}
-                <div className="absolute -right-8 -top-8 w-32 h-32 opacity-10">
-                  <svg viewBox="0 0 100 100" fill="currentColor" className="text-black">
+                <div className="absolute -right-8 -top-8 w-32 h-32 opacity-[0.08]">
+                  <svg viewBox="0 0 100 100" fill="currentColor" className="text-[#2d5a52]">
                     <path d="M50,10 Q30,30 20,60 Q40,50 50,50 Q60,50 80,60 Q70,30 50,10 Z" />
                   </svg>
                 </div>
                 {/* Icon - Palm tree for disconnection */}
-                <div className="w-14 h-14 rounded-full bg-white/30 flex items-center justify-center mb-6 transition-all duration-500 group-hover:scale-110 group-hover:bg-white/50">
-                  <svg className="w-7 h-7 text-[#0d5c54]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                <div className="w-14 h-14 rounded-full bg-[#a8d5cf] flex items-center justify-center mb-6 transition-all duration-500 group-hover:scale-110 group-hover:bg-[#8ec5bd]">
+                  <svg className="w-7 h-7 text-[#2d5a52]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 3c-1.5 2-3 4-3 6s1.5 3 3 3 3-1 3-3-1.5-4-3-6zM12 12v9M8 21h8M6 8c-2 0-4 1-4 3s2 2 4 1M18 8c2 0 4 1 4 3s-2 2-4 1M4 5c1 1 3 2 5 1M20 5c-1 1-3 2-5 1" />
                   </svg>
                 </div>
-                <h3 className="font-['Playfair_Display',serif] font-normal text-[28px] text-[#0d5c54] leading-[1.2] mb-4 transition-colors duration-300">
+                <h3 className="font-['Playfair_Display',serif] font-normal text-[28px] text-[#2d3a38] leading-[1.2] mb-4 transition-colors duration-300">
                   Desconexión real
                 </h3>
-                <p className="font-['Jost',sans-serif] font-light text-[16px] text-[#0d5c54]/90 leading-[1.6]">
+                <p className="font-['Jost',sans-serif] font-light text-[16px] text-[#3d4a47] leading-[1.6]">
                   Privacidad total, cero tráfico y sonidos completamente naturales.
                   <br /><br />
                   Un descanso que no se encuentra en hoteles ni zonas turísticas.
                 </p>
               </div>
 
-              {/* Agricultura sostenible - Verde tropical */}
-              <div className="relative p-8 rounded-2xl bg-[#2E8B57] transition-all duration-500 hover:shadow-xl hover:scale-[1.02] group overflow-hidden">
+              {/* Agricultura sostenible - Verde salvia suave */}
+              <div className="relative p-8 rounded-2xl bg-[#dce8dc] transition-all duration-500 hover:shadow-xl hover:scale-[1.02] group overflow-hidden border border-[#c5d9c5]">
                 {/* Decorative leaf pattern */}
-                <div className="absolute -right-8 -top-8 w-32 h-32 opacity-10">
-                  <svg viewBox="0 0 100 100" fill="currentColor" className="text-white">
+                <div className="absolute -right-8 -top-8 w-32 h-32 opacity-[0.08]">
+                  <svg viewBox="0 0 100 100" fill="currentColor" className="text-[#3d5a3d]">
                     <path d="M50,10 Q30,30 20,60 Q40,50 50,50 Q60,50 80,60 Q70,30 50,10 Z" />
                   </svg>
                 </div>
                 {/* Icon - Leaf/Plant for agriculture */}
-                <div className="w-14 h-14 rounded-full bg-white/30 flex items-center justify-center mb-6 transition-all duration-500 group-hover:scale-110 group-hover:bg-white/50">
-                  <svg className="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                <div className="w-14 h-14 rounded-full bg-[#b8d4b8] flex items-center justify-center mb-6 transition-all duration-500 group-hover:scale-110 group-hover:bg-[#a3c9a3]">
+                  <svg className="w-7 h-7 text-[#3d5a3d]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 21c0-6 4-10 9-10-5 0-9-4-9-10 0 6-4 10-9 10 5 0 9 4 9 10z" />
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 21V11" />
                   </svg>
                 </div>
-                <h3 className="font-['Playfair_Display',serif] font-normal text-[28px] text-white leading-[1.2] mb-4 transition-colors duration-300">
+                <h3 className="font-['Playfair_Display',serif] font-normal text-[28px] text-[#2d3a2d] leading-[1.2] mb-4 transition-colors duration-300">
                   Agricultura sostenible
                 </h3>
-                <p className="font-['Jost',sans-serif] font-light text-[16px] text-white/90 leading-[1.6]">
+                <p className="font-['Jost',sans-serif] font-light text-[16px] text-[#3d4a3d] leading-[1.6]">
                   Más de 12 jardines ornamentales, áreas agrícolas y un cultivo responsable que revive el suelo y atrae vida.
                 </p>
               </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative">
-              {/* El agua como recurso sagrado - Azul océano */}
-              <div className="relative p-8 rounded-2xl bg-[#1E90FF] transition-all duration-500 hover:shadow-xl hover:scale-[1.02] group overflow-hidden">
+              {/* El agua como recurso sagrado - Azul cielo claro */}
+              <div className="relative p-8 rounded-2xl bg-[#dbe9f4] transition-all duration-500 hover:shadow-xl hover:scale-[1.02] group overflow-hidden border border-[#c4d9eb]">
                 {/* Decorative wave pattern */}
-                <div className="absolute -right-8 -bottom-8 w-32 h-32 opacity-10">
-                  <svg viewBox="0 0 100 100" fill="currentColor" className="text-white">
+                <div className="absolute -right-8 -bottom-8 w-32 h-32 opacity-[0.08]">
+                  <svg viewBox="0 0 100 100" fill="currentColor" className="text-[#2d4a5a]">
                     <path d="M0,50 Q25,30 50,50 T100,50 L100,100 L0,100 Z" />
                   </svg>
                 </div>
                 {/* Icon - Water droplet */}
-                <div className="w-14 h-14 rounded-full bg-white/30 flex items-center justify-center mb-6 transition-all duration-500 group-hover:scale-110 group-hover:bg-white/50">
-                  <svg className="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                <div className="w-14 h-14 rounded-full bg-[#b5d4e8] flex items-center justify-center mb-6 transition-all duration-500 group-hover:scale-110 group-hover:bg-[#9cc5de]">
+                  <svg className="w-7 h-7 text-[#2d4a5a]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 21c-4 0-7-3-7-7 0-5 7-11 7-11s7 6 7 11c0 4-3 7-7 7z" />
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 18c-2 0-4-1.5-4-4" />
                   </svg>
                 </div>
-                <h3 className="font-['Playfair_Display',serif] font-normal text-[28px] text-white leading-[1.2] mb-4 transition-colors duration-300">
+                <h3 className="font-['Playfair_Display',serif] font-normal text-[28px] text-[#2d3a40] leading-[1.2] mb-4 transition-colors duration-300">
                   El agua como recurso sagrado
                 </h3>
-                <p className="font-['Jost',sans-serif] font-light text-[16px] text-white/90 leading-[1.6]">
+                <p className="font-['Jost',sans-serif] font-light text-[16px] text-[#3d4a50] leading-[1.6]">
                   Dos quebradas bordean la finca y crean un ambiente fresco; el agua que utilizamos proviene del manantial y de la lluvia recolectada, cada gota se valora.
                 </p>
               </div>
 
-              {/* Comida típica - Amarillo mango */}
-              <div className="relative p-8 rounded-2xl bg-[#FFB347] transition-all duration-500 hover:shadow-xl hover:scale-[1.02] group overflow-hidden">
+              {/* Comida típica - Amarillo arena cálido */}
+              <div className="relative p-8 rounded-2xl bg-[#f5edd8] transition-all duration-500 hover:shadow-xl hover:scale-[1.02] group overflow-hidden border border-[#e8dfc5]">
                 {/* Decorative fruit pattern */}
-                <div className="absolute -right-8 -top-8 w-32 h-32 opacity-10">
-                  <svg viewBox="0 0 100 100" fill="currentColor" className="text-[#8B4513]">
+                <div className="absolute -right-8 -top-8 w-32 h-32 opacity-[0.08]">
+                  <svg viewBox="0 0 100 100" fill="currentColor" className="text-[#6b5a3d]">
                     <circle cx="50" cy="50" r="30" />
                   </svg>
                 </div>
                 {/* Icon - Tropical fruit/food */}
-                <div className="w-14 h-14 rounded-full bg-white/30 flex items-center justify-center mb-6 transition-all duration-500 group-hover:scale-110 group-hover:bg-white/50">
-                  <svg className="w-7 h-7 text-[#8B4513]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                <div className="w-14 h-14 rounded-full bg-[#e8dbb8] flex items-center justify-center mb-6 transition-all duration-500 group-hover:scale-110 group-hover:bg-[#dccfa3]">
+                  <svg className="w-7 h-7 text-[#6b5a3d]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 6c3 0 5 2 5 5 0 4-2 8-5 10-3-2-5-6-5-10 0-3 2-5 5-5z" />
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 6V3M10 4c1-1 3-1 4 0" />
                   </svg>
                 </div>
-                <h3 className="font-['Playfair_Display',serif] font-normal text-[28px] text-[#8B4513] leading-[1.2] mb-4 transition-colors duration-300">
+                <h3 className="font-['Playfair_Display',serif] font-normal text-[28px] text-[#3d3a2d] leading-[1.2] mb-4 transition-colors duration-300">
                   Comida típica
                 </h3>
-                <p className="font-['Jost',sans-serif] font-light text-[16px] text-[#8B4513]/90 leading-[1.6]">
+                <p className="font-['Jost',sans-serif] font-light text-[16px] text-[#4a473d] leading-[1.6]">
                   Con ingredientes cosechados en la finca, la Chef Elba transforma lo simple en platos llenos de sabor puertorriqueño, tradición y cariño.
                 </p>
               </div>
