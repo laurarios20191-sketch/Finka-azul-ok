@@ -248,21 +248,21 @@ export default function App() {
             Tu navegador no soporta el elemento de video.
           </video>
 
-          {/* Dark Semi-transparent Overlay */}
-          <div className="absolute inset-0 bg-black/50" />
+          {/* Left-side Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
 
-          {/* Content - Centered */}
-          <div className="relative z-10 h-full flex flex-col items-center justify-center px-8 lg:px-20 text-center">
-            <div className="max-w-[800px] space-y-6">
-              <h1 className="font-['Playfair_Display',serif] font-normal text-white text-[40px] lg:text-[56px] leading-[1.15] drop-shadow-lg">
+          {/* Content - Left Aligned */}
+          <div className="relative z-10 h-full flex flex-col items-start justify-center px-8 lg:px-20 xl:px-28 text-left">
+            <div className="max-w-[650px] flex flex-col">
+              <h1 className="font-['Playfair_Display',serif] font-normal text-white text-[48px] lg:text-[72px] xl:text-[80px] leading-[1.1] drop-shadow-lg">
                 Un refugio rural en el corazón del Caribe
               </h1>
-              <p className="font-['Jost',sans-serif] font-light text-[18px] lg:text-[20px] text-white/90 leading-[1.6] drop-shadow-md max-w-[600px] mx-auto">
+              <p className="font-['Jost',sans-serif] font-extralight text-[15px] lg:text-[17px] text-white/80 leading-[1.7] drop-shadow-md max-w-[500px] mt-6">
                 Reconecta con la tierra, respira aire puro y vive el ritmo pausado de la naturaleza en nuestro espacio eco-rural en Patillas, Puerto Rico.
               </p>
               <button
                 onClick={() => scrollToSection('reserva')}
-                className="inline-block px-8 py-3 bg-[#f4d03f] rounded-full font-['Inter',sans-serif] font-medium text-[16px] text-black transition-all duration-300 hover:bg-[#e5c236] hover:shadow-lg hover:scale-105 hover:-translate-y-1 mt-4"
+                className="inline-block px-8 py-3 bg-[#f4d03f] rounded-full font-['Inter',sans-serif] font-medium text-[16px] text-black transition-all duration-300 hover:bg-[#e5c236] hover:shadow-lg hover:scale-105 hover:-translate-y-1 mt-10 w-fit"
               >
                 Reserva ahora
               </button>
