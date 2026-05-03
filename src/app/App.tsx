@@ -244,8 +244,7 @@ export default function App() {
             muted
             playsInline
           >
-            {/* Replace with your actual video URL */}
-            <source src="https://videos.pexels.com/video-files/3571264/3571264-uhd_2560_1440_30fps.mp4" type="video/mp4" />
+            <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/video%20hero-6rvLBxvPL1q6pgPHhKQZ3heBXYIi0W.mp4" type="video/mp4" />
             Tu navegador no soporta el elemento de video.
           </video>
 
