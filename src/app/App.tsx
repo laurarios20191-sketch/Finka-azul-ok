@@ -118,11 +118,15 @@ const WaveDecoration = ({ className = "" }: { className?: string }) => (
 export default function App() {
   const [activeSection, setActiveSection] = useState('');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       const sections = ['refugio', 'amor', 'experiencia', 'kabana'];
       const scrollPosition = window.scrollY + 100;
+
+      // Check if scrolled past hero section
+      setIsScrolled(window.scrollY > 100);
 
       for (const section of sections) {
         const element = document.getElementById(section);
@@ -151,14 +155,20 @@ export default function App() {
   return (
     <div className="min-h-screen bg-[#f7f3e8]">
       {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-[#f7f3e8]/95 backdrop-blur-sm border-b border-[#3795b4]/20 transition-all duration-300">
+      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        isScrolled 
+          ? 'bg-white/95 backdrop-blur-sm border-b border-[#3795b4]/20 shadow-sm' 
+          : 'bg-black/20 backdrop-blur-sm border-b border-white/10'
+      }`}>
         <div className="max-w-[1280px] mx-auto px-8 lg:px-20 py-5 flex items-center justify-between">
           {/* Logo - SOLO en header */}
           <div className="transition-transform duration-300 hover:scale-105">
             <img 
               src={imgLogo} 
               alt="Finka Azul" 
-              className="h-[50px] w-auto"
+              className={`h-[50px] w-auto transition-all duration-500 ${
+                isScrolled ? '' : 'brightness-0 invert'
+              }`}
             />
           </div>
 
@@ -173,8 +183,14 @@ export default function App() {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`font-['Inter',sans-serif] text-[15px] transition-all duration-300 hover:text-[#3795b4] hover:translate-y-[-2px] ${
-                  activeSection === item.id ? 'text-[#3795b4] font-medium' : 'text-black font-normal'
+                className={`font-['Inter',sans-serif] text-[15px] transition-all duration-300 hover:translate-y-[-2px] ${
+                  isScrolled
+                    ? activeSection === item.id 
+                      ? 'text-[#f4d03f] font-medium' 
+                      : 'text-black font-normal hover:text-[#3795b4]'
+                    : activeSection === item.id 
+                      ? 'text-[#f4d03f] font-medium' 
+                      : 'text-white font-normal hover:text-[#f4d03f]'
                 }`}
               >
                 {item.label}
@@ -194,16 +210,20 @@ export default function App() {
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? (
-              <X className="size-6 text-[#3795b4]" />
+              <X className={`size-6 transition-colors duration-300 ${isScrolled ? 'text-[#3795b4]' : 'text-white'}`} />
             ) : (
-              <Menu className="size-6 text-[#3795b4]" />
+              <Menu className={`size-6 transition-colors duration-300 ${isScrolled ? 'text-[#3795b4]' : 'text-white'}`} />
             )}
           </button>
         </div>
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden border-t border-[#3795b4]/20 bg-[#f7f3e8] animate-in slide-in-from-top duration-300">
+          <div className={`md:hidden border-t animate-in slide-in-from-top duration-300 ${
+            isScrolled 
+              ? 'border-[#3795b4]/20 bg-white/95 backdrop-blur-sm' 
+              : 'border-white/20 bg-black/40 backdrop-blur-sm'
+          }`}>
             <nav className="px-8 py-6 space-y-4 max-w-[1280px] mx-auto">
               {[
                 { id: 'refugio', label: 'Inicio' },
@@ -214,8 +234,14 @@ export default function App() {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`font-['Inter',sans-serif] text-[15px] transition-all duration-300 hover:text-[#3795b4] hover:translate-x-2 block w-full text-left ${
-                    activeSection === item.id ? 'text-[#3795b4] font-medium' : 'text-black font-normal'
+                  className={`font-['Inter',sans-serif] text-[15px] transition-all duration-300 hover:translate-x-2 block w-full text-left ${
+                    isScrolled
+                      ? activeSection === item.id 
+                        ? 'text-[#f4d03f] font-medium' 
+                        : 'text-black font-normal hover:text-[#3795b4]'
+                      : activeSection === item.id 
+                        ? 'text-[#f4d03f] font-medium' 
+                        : 'text-white font-normal hover:text-[#f4d03f]'
                   }`}
                 >
                   {item.label}
