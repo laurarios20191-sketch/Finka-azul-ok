@@ -304,33 +304,18 @@ export default function App() {
         </section>
 
         {/* Hecho con Amor Section */}
-        <section id="amor" className="relative py-20 lg:py-28 bg-[#FF8C42] overflow-hidden">
-          {/* Soft diagonal stripe texture for depth - darker for orange bg */}
-          <div className="absolute inset-0 pointer-events-none opacity-[0.12]" style={{
-            backgroundImage: `repeating-linear-gradient(
-              45deg,
-              transparent,
-              transparent 20px,
-              #000000 20px,
-              #000000 22px
-            )`
-          }} />
-          {/* Soft noise texture overlay */}
-          <div className="absolute inset-0 pointer-events-none opacity-[0.04]" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`
-          }} />
-
+        <section id="amor" className="relative py-20 lg:py-28 bg-[#2AACB8] overflow-hidden">
           <div className="max-w-[1280px] mx-auto px-8 lg:px-20 relative">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
               {/* Content */}
               <div className="space-y-6">
                 {/* Title with decorative leaf */}
                 <div className="flex items-center gap-4">
-                  <h2 className="font-['Fraunces',serif] font-normal italic text-white text-[44px] lg:text-[60px] leading-[1.1] transition-all duration-300 hover:text-white/90">
+                  <h2 className="font-['Fraunces',serif] font-normal italic text-[#1a3a3a] text-[44px] lg:text-[60px] leading-[1.1] transition-all duration-300 hover:text-[#0f2828]">
                     Hecho con amor
                   </h2>
-                  {/* Hand-drawn tropical leaf decoration - white */}
-                  <svg className="w-12 h-12 lg:w-16 lg:h-16 text-white flex-shrink-0 -mt-2" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  {/* Hand-drawn tropical leaf decoration - dark */}
+                  <svg className="w-12 h-12 lg:w-16 lg:h-16 text-[#1a3a3a] flex-shrink-0 -mt-2" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M32 8C32 8 20 16 16 28C12 40 16 52 32 56C48 52 52 40 48 28C44 16 32 8 32 8Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" fill="currentColor" fillOpacity="0.15"/>
                     <path d="M32 8C32 8 28 20 28 32C28 44 32 56 32 56" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
                     <path d="M32 20C28 24 24 28 20 30" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
@@ -339,7 +324,7 @@ export default function App() {
                     <path d="M32 32C36 36 40 40 42 44" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
                   </svg>
                 </div>
-                <p className="font-['Lora',serif] font-normal text-[16px] lg:text-[17px] text-white leading-[1.8] transition-opacity duration-300 hover:opacity-90">
+                <p className="font-['Lora',serif] font-normal text-[16px] lg:text-[17px] text-[#1a3a3a] leading-[1.8] transition-opacity duration-300 hover:opacity-80">
                   Finka Azul nació del deseo profundo de Don Antonio y Elba de crear un lugar que reflejara su filosofía de vida: una forma de habitar el mundo con calma y respeto por la naturaleza. Cada rincón de la finca fue pensado para que quienes la visitan puedan conectar con esa esencia, vivir experiencias auténticas y sentir la serenidad que ellos han cultivado.
                 </p>
                 {/* Conoce nuestra historia link */}
