@@ -183,7 +183,7 @@ export default function App() {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`font-['Inter',sans-serif] text-[15px] transition-all duration-300 hover:translate-y-[-2px] ${
+                className={`font-['DM_Sans',sans-serif] text-[15px] transition-all duration-300 hover:translate-y-[-2px] ${
                   isScrolled
                     ? activeSection === item.id 
                       ? 'text-[#f4d03f] font-medium' 
@@ -198,7 +198,7 @@ export default function App() {
             ))}
             <button
               onClick={() => scrollToSection('reserva')}
-              className="px-6 py-2.5 bg-[#f4d03f] rounded-full font-['Inter',sans-serif] text-[15px] text-black font-medium transition-all duration-300 hover:bg-[#e5c236] hover:shadow-md hover:scale-105"
+              className="px-6 py-2.5 bg-[#f4d03f] rounded-full font-['DM_Sans',sans-serif] text-[15px] text-black font-medium transition-all duration-300 hover:bg-[#e5c236] hover:shadow-md hover:scale-105"
             >
               Reservar
             </button>
@@ -234,7 +234,7 @@ export default function App() {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`font-['Inter',sans-serif] text-[15px] transition-all duration-300 hover:translate-x-2 block w-full text-left ${
+                  className={`font-['DM_Sans',sans-serif] text-[15px] transition-all duration-300 hover:translate-x-2 block w-full text-left ${
                     isScrolled
                       ? activeSection === item.id 
                         ? 'text-[#f4d03f] font-medium' 
@@ -249,7 +249,7 @@ export default function App() {
               ))}
               <button
                 onClick={() => scrollToSection('reserva')}
-                className="w-full px-6 py-2.5 bg-[#f4d03f] rounded-full font-['Inter',sans-serif] text-[15px] text-black font-medium transition-all duration-300 hover:bg-[#e5c236] text-center hover:scale-105"
+                className="w-full px-6 py-2.5 bg-[#f4d03f] rounded-full font-['DM_Sans',sans-serif] text-[15px] text-black font-medium transition-all duration-300 hover:bg-[#e5c236] text-center hover:scale-105"
               >
                 Reservar
               </button>
@@ -280,15 +280,15 @@ export default function App() {
           {/* Content - Left Aligned */}
           <div className="relative z-10 h-full flex flex-col items-start justify-center px-8 lg:px-20 xl:px-28 text-left pt-24 lg:pt-32">
             <div className="max-w-[650px] flex flex-col">
-              <h1 className="font-['Playfair_Display',serif] font-normal text-white text-[48px] lg:text-[72px] xl:text-[80px] leading-[1.1] drop-shadow-lg">
+              <h1 className="font-['Playfair_Display',serif] font-normal italic text-white text-[48px] lg:text-[72px] xl:text-[80px] leading-[1.1] drop-shadow-lg">
                 Un refugio rural en el corazón del <span className="text-[#F5C842]">Caribe</span>
               </h1>
-              <p className="font-['Jost',sans-serif] font-extralight text-[15px] lg:text-[17px] text-white/80 leading-[1.7] drop-shadow-md max-w-[500px] mt-6 pl-5 border-l-[3px] border-[#4ECDC4]">
+              <p className="font-['DM_Sans',sans-serif] font-extralight text-[15px] lg:text-[17px] text-white/80 leading-[1.7] drop-shadow-md max-w-[500px] mt-6 pl-5 border-l-[3px] border-[#4ECDC4]">
                 Reconecta con la tierra, respira aire puro y vive el ritmo pausado de la naturaleza en nuestro espacio eco-rural en Patillas, Puerto Rico.
               </p>
               <button
                 onClick={() => scrollToSection('reserva')}
-                className="inline-block px-8 py-3 bg-[#f4d03f] rounded-full font-['Inter',sans-serif] font-medium text-[16px] text-black transition-all duration-300 hover:bg-[#e5c236] hover:scale-105 hover:-translate-y-1 mt-10 w-fit shadow-[0_4px_20px_rgba(245,200,66,0.4)] hover:shadow-[0_6px_25px_rgba(245,200,66,0.6)]"
+                className="inline-block px-8 py-3 bg-[#f4d03f] rounded-full font-['DM_Sans',sans-serif] font-medium text-[16px] text-black transition-all duration-300 hover:bg-[#e5c236] hover:scale-105 hover:-translate-y-1 mt-10 w-fit shadow-[0_4px_20px_rgba(245,200,66,0.4)] hover:shadow-[0_6px_25px_rgba(245,200,66,0.6)]"
               >
                 Reserva ahora
               </button>
@@ -331,7 +331,7 @@ export default function App() {
                 <h2 className="font-['Playfair_Display',serif] font-normal text-[#3795b4] text-[36px] lg:text-[44px] leading-[1.15] transition-all duration-300 hover:text-[#2e7a91]">
                   Hecho con amor
                 </h2>
-                <p className="font-['Jost',sans-serif] font-light text-[17px] text-black leading-[1.6] transition-opacity duration-300 hover:opacity-80">
+                <p className="font-['DM_Sans',sans-serif] font-light text-[17px] text-black leading-[1.6] transition-opacity duration-300 hover:opacity-80">
                   Finka Azul nació del deseo profundo de Don Antonio y Elba de crear un lugar que reflejara su filosofía de vida: una forma de habitar el mundo con calma y respeto por la naturaleza. Cada rincón de la finca fue pensado para que quienes la visitan puedan conectar con esa esencia, vivir experiencias auténticas y sentir la serenidad que ellos han cultivado.
                 </p>
               </div>
@@ -376,7 +376,7 @@ export default function App() {
               <h2 className="font-['Playfair_Display',serif] font-normal text-[40px] lg:text-[52px] text-black leading-[1.15] transition-all duration-300 hover:text-[#3795b4]">
                 La experiencia
               </h2>
-              <p className="font-['Jost',sans-serif] font-light text-[17px] text-black leading-[1.6] transition-opacity duration-300 hover:opacity-80">
+              <p className="font-['DM_Sans',sans-serif] font-light text-[17px] text-black leading-[1.6] transition-opacity duration-300 hover:opacity-80">
                 En la costa rural de Patillas, entre jardines vivos, palmas y el murmullo constante del agua, descubrirás un espacio para pausar y reconectar con lo esencial. La experiencia en Finka Azul es íntima, auténtica y profundamente natural.
               </p>
             </div>
@@ -400,7 +400,7 @@ export default function App() {
                 <h3 className="font-['Playfair_Display',serif] font-normal text-[28px] text-[#2d3a38] leading-[1.2] mb-4 transition-colors duration-300">
                   Desconexión real
                 </h3>
-                <p className="font-['Jost',sans-serif] font-light text-[16px] text-[#3d4a47] leading-[1.6]">
+                <p className="font-['DM_Sans',sans-serif] font-light text-[16px] text-[#3d4a47] leading-[1.6]">
                   Privacidad total, cero tráfico y sonidos completamente naturales.
                   <br /><br />
                   Un descanso que no se encuentra en hoteles ni zonas turísticas.
@@ -425,7 +425,7 @@ export default function App() {
                 <h3 className="font-['Playfair_Display',serif] font-normal text-[28px] text-[#2d3a2d] leading-[1.2] mb-4 transition-colors duration-300">
                   Agricultura sostenible
                 </h3>
-                <p className="font-['Jost',sans-serif] font-light text-[16px] text-[#3d4a3d] leading-[1.6]">
+                <p className="font-['DM_Sans',sans-serif] font-light text-[16px] text-[#3d4a3d] leading-[1.6]">
                   Más de 12 jardines ornamentales, áreas agrícolas y un cultivo responsable que revive el suelo y atrae vida.
                 </p>
               </div>
@@ -450,7 +450,7 @@ export default function App() {
                 <h3 className="font-['Playfair_Display',serif] font-normal text-[28px] text-[#2d3a40] leading-[1.2] mb-4 transition-colors duration-300">
                   El agua como recurso sagrado
                 </h3>
-                <p className="font-['Jost',sans-serif] font-light text-[16px] text-[#3d4a50] leading-[1.6]">
+                <p className="font-['DM_Sans',sans-serif] font-light text-[16px] text-[#3d4a50] leading-[1.6]">
                   Dos quebradas bordean la finca y crean un ambiente fresco; el agua que utilizamos proviene del manantial y de la lluvia recolectada, cada gota se valora.
                 </p>
               </div>
@@ -473,7 +473,7 @@ export default function App() {
                 <h3 className="font-['Playfair_Display',serif] font-normal text-[28px] text-[#3d3a2d] leading-[1.2] mb-4 transition-colors duration-300">
                   Comida típica
                 </h3>
-                <p className="font-['Jost',sans-serif] font-light text-[16px] text-[#4a473d] leading-[1.6]">
+                <p className="font-['DM_Sans',sans-serif] font-light text-[16px] text-[#4a473d] leading-[1.6]">
                   Con ingredientes cosechados en la finca, la Chef Elba transforma lo simple en platos llenos de sabor puertorriqueño, tradición y cariño.
                 </p>
               </div>
@@ -507,11 +507,11 @@ export default function App() {
                   Tu pequeña casa cerca del mar.
                 </p>
 
-                <p className="font-['Inter',sans-serif] font-normal text-[16px] text-black leading-[1.6] transition-opacity duration-300 hover:opacity-80">
+                <p className="font-['DM_Sans',sans-serif] font-normal text-[16px] text-black leading-[1.6] transition-opacity duration-300 hover:opacity-80">
                   Una acogedora cabaña de madera rodeada de palmas, flores y el canto del coquí.
                 </p>
 
-                <p className="font-['Inter',sans-serif] font-normal text-[16px] text-black leading-[1.6] transition-opacity duration-300 hover:opacity-80">
+                <p className="font-['DM_Sans',sans-serif] font-normal text-[16px] text-black leading-[1.6] transition-opacity duration-300 hover:opacity-80">
                   Sencilla, auténtica y perfecta para quienes buscan descansar en medio de la naturaleza.
                 </p>
 
@@ -579,7 +579,7 @@ export default function App() {
                         className="flex items-center gap-3 bg-white/50 rounded-lg px-4 py-3 transition-all duration-300 hover:bg-white/70 hover:scale-105 hover:shadow-md"
                       >
                         <div className="shrink-0 transition-transform duration-300 hover:scale-110">{amenity.icon}</div>
-                        <p className="font-['Inter',sans-serif] font-medium text-[#556b2f] text-[15px]">
+                        <p className="font-['DM_Sans',sans-serif] font-medium text-[#556b2f] text-[15px]">
                           {amenity.text}
                         </p>
                       </div>
@@ -587,7 +587,7 @@ export default function App() {
                   </div>
                 </div>
 
-                <p className="font-['Inter',sans-serif] font-normal italic text-[15px] text-black leading-[1.6] pt-2 transition-opacity duration-300 hover:opacity-80">
+                <p className="font-['DM_Sans',sans-serif] font-normal italic text-[15px] text-black leading-[1.6] pt-2 transition-opacity duration-300 hover:opacity-80">
                   Un espacio privado y tranquilo donde el ritmo de la naturaleza se convierte en parte de tu estancia.
                 </p>
               </div>
@@ -642,10 +642,10 @@ export default function App() {
 
                 {/* Description paragraphs */}
                 <div className="space-y-6">
-                  <p className="font-['Inter',sans-serif] font-normal text-[17px] text-black leading-[1.6] transition-opacity duration-300 hover:opacity-80">
+                  <p className="font-['DM_Sans',sans-serif] font-normal text-[17px] text-black leading-[1.6] transition-opacity duration-300 hover:opacity-80">
                     Patillas es uno de los tesoros naturales de Puerto Rico, un lugar donde el mar Caribe, los ríos, las montañas y los bosques tropicales conviven en un mismo territorio.
                   </p>
-                  <p className="font-['Inter',sans-serif] font-normal text-[17px] text-black leading-[1.6] transition-opacity duration-300 hover:opacity-80">
+                  <p className="font-['DM_Sans',sans-serif] font-normal text-[17px] text-black leading-[1.6] transition-opacity duration-300 hover:opacity-80">
                     Un destino perfecto para quienes disfrutan la naturaleza, la fotografía y la vida tranquila.
                   </p>
                 </div>
@@ -668,7 +668,7 @@ export default function App() {
                             <path d={svgLocation.p2e9bce00} stroke="#3795b4" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" />
                           </svg>
                         </div>
-                        <p className="font-['Inter',sans-serif] font-normal text-[17px] text-black leading-[1.5]">
+                        <p className="font-['DM_Sans',sans-serif] font-normal text-[17px] text-black leading-[1.5]">
                           Nueve playas a menos de 10 km
                         </p>
                       </div>
@@ -683,7 +683,7 @@ export default function App() {
                             <path d={svgLocation.p18232e00} stroke="#3795b4" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" />
                           </svg>
                         </div>
-                        <p className="font-['Inter',sans-serif] font-normal text-[17px] text-black leading-[1.5]">
+                        <p className="font-['DM_Sans',sans-serif] font-normal text-[17px] text-black leading-[1.5]">
                           1 h 45 min del aeropuerto de San Juan
                         </p>
                       </div>
@@ -697,7 +697,7 @@ export default function App() {
                             <path d={svgLocation.pf1aa180} stroke="#3795b4" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" />
                           </svg>
                         </div>
-                        <p className="font-['Inter',sans-serif] font-normal text-[17px] text-black leading-[1.5]">
+                        <p className="font-['DM_Sans',sans-serif] font-normal text-[17px] text-black leading-[1.5]">
                           45 min del ferry hacia Vieques y Culebra
                         </p>
                       </div>
@@ -711,7 +711,7 @@ export default function App() {
                             <path d={svgLocation.p190eab00} stroke="#3795b4" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" />
                           </svg>
                         </div>
-                        <p className="font-['Inter',sans-serif] font-normal text-[17px] text-black leading-[1.5]">
+                        <p className="font-['DM_Sans',sans-serif] font-normal text-[17px] text-black leading-[1.5]">
                           45 min de las aguas termales de Coamo
                         </p>
                       </div>
@@ -762,7 +762,7 @@ export default function App() {
               </h2>
 
               {/* Description */}
-              <p className="font-['Inter',sans-serif] font-normal text-[17px] text-black leading-[1.6] max-w-[800px]">
+              <p className="font-['DM_Sans',sans-serif] font-normal text-[17px] text-black leading-[1.6] max-w-[800px]">
                 Elige tus fechas, confirma tu reserva y prepárate para una experiencia tranquila rodeada de naturaleza.
               </p>
 
@@ -787,7 +787,7 @@ export default function App() {
                     className="h-[56px] w-auto"
                   />
                 </div>
-                <p className="font-['Inter',sans-serif] text-[15px] text-black leading-[1.6] transition-opacity duration-300 hover:opacity-80">
+                <p className="font-['DM_Sans',sans-serif] text-[15px] text-black leading-[1.6] transition-opacity duration-300 hover:opacity-80">
                   Un refugio rural en el corazón del Caribe. Reconecta con la naturaleza en Patillas, Puerto Rico.
                 </p>
               </div>
@@ -797,7 +797,7 @@ export default function App() {
                 <h3 className="font-['Playfair_Display',serif] font-semibold text-[20px] text-black mb-4">
                   Contacto
                 </h3>
-                <ul className="space-y-2 font-['Inter',sans-serif] text-[15px] text-black leading-[1.6]">
+                <ul className="space-y-2 font-['DM_Sans',sans-serif] text-[15px] text-black leading-[1.6]">
                   <li className="transition-all duration-300 hover:translate-x-1 hover:text-[#3795b4]">Patillas, Puerto Rico</li>
                   <li className="transition-all duration-300 hover:translate-x-1 hover:text-[#3795b4]">info@finkaazul.com</li>
                   <li className="transition-all duration-300 hover:translate-x-1 hover:text-[#3795b4]">(787) 555-1234</li>
@@ -809,7 +809,7 @@ export default function App() {
                 <h3 className="font-['Playfair_Display',serif] font-semibold text-[20px] text-black mb-4">
                   Enlaces
                 </h3>
-                <ul className="space-y-2 font-['Inter',sans-serif] text-[15px]">
+                <ul className="space-y-2 font-['DM_Sans',sans-serif] text-[15px]">
                   {['Inicio', 'Nosotros', 'Experiencia', 'Cabaña', 'Reservar'].map((link) => (
                     <li key={link}>
                       <a href="#" className="text-black hover:text-[#3795b4] transition-all duration-300 hover:translate-x-1 inline-block">
@@ -822,7 +822,7 @@ export default function App() {
             </div>
 
             <div className="border-t border-black/20 pt-8">
-              <p className="font-['Inter',sans-serif] text-[13px] text-black/80 text-center leading-[1.5] transition-opacity duration-300 hover:opacity-100">
+              <p className="font-['DM_Sans',sans-serif] text-[13px] text-black/80 text-center leading-[1.5] transition-opacity duration-300 hover:opacity-100">
                 © 2024 Finka Azul. Todos los derechos reservados. | Política de privacidad | Términos y condiciones
               </p>
             </div>
