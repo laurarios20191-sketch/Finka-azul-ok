@@ -351,14 +351,9 @@ export default function App() {
               </div>
             </div>
           </div>
+          {/* Gradient fade to next section */}
+          <div className="absolute bottom-0 left-0 right-0 h-[150px] bg-gradient-to-b from-transparent to-[#f7f3e8] pointer-events-none" />
         </section>
-
-        {/* Wavy Separator */}
-        <div className="relative bg-[#a8d8d8]">
-          <svg className="w-full h-16 lg:h-24" viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0,0 C320,100 420,100 720,50 C1020,0 1120,0 1440,100 L1440,100 L0,100 Z" fill="#f7f3e8" />
-          </svg>
-        </div>
 
         {/* La Experiencia Section */}
         <section id="experiencia" className="relative py-20 lg:py-28 bg-[#f7f3e8] overflow-hidden">
@@ -477,6 +472,9 @@ export default function App() {
               </div>
             </div>
           </div>
+
+          {/* Gradient fade to next section */}
+          <div className="absolute bottom-0 left-0 right-0 h-[150px] bg-gradient-to-b from-transparent to-[#a8d8d8] pointer-events-none" />
         </section>
 
         {/* Kabaña Azul Section */}
@@ -735,6 +733,9 @@ export default function App() {
               </div>
             </div>
           </div>
+
+          {/* Gradient fade to next section */}
+          <div className="absolute bottom-0 left-0 right-0 h-[150px] bg-gradient-to-b from-transparent to-[#f7f3e8] pointer-events-none" />
         </section>
 
         {/* CTA Section - CLEAN DESIGN INSPIRED BY FIGMA */}
