@@ -307,31 +307,19 @@ export default function App() {
         </section>
 
         {/* Hecho con Amor Section */}
-        <section id="amor" className="relative py-20 lg:py-28 bg-[#2AACB8] overflow-hidden">
+        <section id="amor" className="relative py-28 lg:py-40 bg-[#2AACB8] overflow-hidden">
           <div className="max-w-[1280px] mx-auto px-8 lg:px-20 relative">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
               {/* Content */}
-              <div className="space-y-6">
-                {/* Title with decorative leaf */}
-                <div className="flex items-center gap-4">
-                  <h2 className="font-['Fraunces',serif] font-normal italic text-[#1a3a3a] text-[44px] lg:text-[60px] leading-[1.1] transition-all duration-300 hover:text-[#0f2828]">
-                    Hecho con amor
-                  </h2>
-                  {/* Hand-drawn tropical leaf decoration - dark */}
-                  <svg className="w-12 h-12 lg:w-16 lg:h-16 text-[#1a3a3a] flex-shrink-0 -mt-2" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M32 8C32 8 20 16 16 28C12 40 16 52 32 56C48 52 52 40 48 28C44 16 32 8 32 8Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" fill="currentColor" fillOpacity="0.15"/>
-                    <path d="M32 8C32 8 28 20 28 32C28 44 32 56 32 56" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                    <path d="M32 20C28 24 24 28 20 30" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-                    <path d="M32 20C36 24 40 28 44 30" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-                    <path d="M32 32C28 36 24 40 22 44" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-                    <path d="M32 32C36 36 40 40 42 44" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-                  </svg>
-                </div>
-                <p className="font-['Lora',serif] font-normal text-[16px] lg:text-[17px] text-[#1a3a3a] leading-[1.8] transition-opacity duration-300 hover:opacity-80">
+              <div className="space-y-8 text-left">
+                <h2 className="font-['Fraunces',serif] font-normal italic text-white text-[36px] lg:text-[48px] leading-[1.1]">
+                  Hecho con amor
+                </h2>
+                <p className="font-['Lora',serif] font-normal text-[16px] lg:text-[17px] text-white leading-[1.8]">
                   Finka Azul nació del deseo profundo de Don Antonio y Elba de crear un lugar que reflejara su filosofía de vida: una forma de habitar el mundo con calma y respeto por la naturaleza. Cada rincón de la finca fue pensado para que quienes la visitan puedan conectar con esa esencia, vivir experiencias auténticas y sentir la serenidad que ellos han cultivado.
                 </p>
                 {/* Conoce nuestra historia link */}
-                <a href="#experiencia" className="inline-flex items-center gap-2 font-['DM_Sans',sans-serif] font-medium text-[15px] text-[#F5C842] hover:text-[#e5b832] transition-all duration-300 group">
+                <a href="#experiencia" className="inline-flex items-center gap-2 font-['DM_Sans',sans-serif] font-medium text-[15px] text-white underline decoration-[#F5C842] decoration-2 underline-offset-4 hover:decoration-white transition-all duration-300 group">
                   Conoce nuestra historia
                   <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
