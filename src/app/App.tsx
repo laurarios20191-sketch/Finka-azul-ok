@@ -252,7 +252,7 @@ export default function App() {
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
 
           {/* Content - Left Aligned */}
-          <div className="relative z-10 h-full flex flex-col items-start justify-center px-8 lg:px-20 xl:px-28 text-left">
+          <div className="relative z-10 h-full flex flex-col items-start justify-center px-8 lg:px-20 xl:px-28 text-left pt-24 lg:pt-32">
             <div className="max-w-[650px] flex flex-col">
               <h1 className="font-['Playfair_Display',serif] font-normal text-white text-[48px] lg:text-[72px] xl:text-[80px] leading-[1.1] drop-shadow-lg">
                 Un refugio rural en el corazón del Caribe
