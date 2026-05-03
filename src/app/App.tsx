@@ -118,11 +118,15 @@ const WaveDecoration = ({ className = "" }: { className?: string }) => (
 export default function App() {
   const [activeSection, setActiveSection] = useState('');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       const sections = ['refugio', 'amor', 'experiencia', 'kabana'];
       const scrollPosition = window.scrollY + 100;
+
+      // Check if scrolled past hero section
+      setIsScrolled(window.scrollY > 100);
 
       for (const section of sections) {
         const element = document.getElementById(section);
@@ -151,14 +155,20 @@ export default function App() {
   return (
     <div className="min-h-screen bg-[#f7f3e8]">
       {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-[#f7f3e8]/95 backdrop-blur-sm border-b border-[#3795b4]/20 transition-all duration-300">
+      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        isScrolled 
+          ? 'bg-white/95 backdrop-blur-sm border-b border-[#4ECDC4] shadow-sm' 
+          : 'bg-black/20 backdrop-blur-sm border-b border-[#4ECDC4]'
+      }`}>
         <div className="max-w-[1280px] mx-auto px-8 lg:px-20 py-5 flex items-center justify-between">
           {/* Logo - SOLO en header */}
           <div className="transition-transform duration-300 hover:scale-105">
             <img 
               src={imgLogo} 
               alt="Finka Azul" 
-              className="h-[50px] w-auto"
+              className={`h-[50px] w-auto transition-all duration-500 ${
+                isScrolled ? '' : 'brightness-0 invert'
+              }`}
             />
           </div>
 
@@ -173,8 +183,14 @@ export default function App() {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`font-['Inter',sans-serif] text-[15px] transition-all duration-300 hover:text-[#3795b4] hover:translate-y-[-2px] ${
-                  activeSection === item.id ? 'text-[#3795b4] font-medium' : 'text-black font-normal'
+                className={`font-['DM_Sans',sans-serif] text-[15px] transition-all duration-300 hover:translate-y-[-2px] ${
+                  isScrolled
+                    ? activeSection === item.id 
+                      ? 'text-[#f4d03f] font-medium' 
+                      : 'text-black font-normal hover:text-[#3795b4]'
+                    : activeSection === item.id 
+                      ? 'text-[#f4d03f] font-medium' 
+                      : 'text-white font-normal hover:text-[#f4d03f]'
                 }`}
               >
                 {item.label}
@@ -182,7 +198,7 @@ export default function App() {
             ))}
             <button
               onClick={() => scrollToSection('reserva')}
-              className="px-6 py-2.5 bg-[#f4d03f] rounded-full font-['Inter',sans-serif] text-[15px] text-black font-medium transition-all duration-300 hover:bg-[#e5c236] hover:shadow-md hover:scale-105"
+              className="px-6 py-2.5 bg-[#f4d03f] rounded-full font-['DM_Sans',sans-serif] text-[15px] text-black font-medium transition-all duration-300 hover:bg-[#e5c236] hover:shadow-md hover:scale-105"
             >
               Reservar
             </button>
@@ -194,16 +210,20 @@ export default function App() {
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? (
-              <X className="size-6 text-[#3795b4]" />
+              <X className={`size-6 transition-colors duration-300 ${isScrolled ? 'text-[#3795b4]' : 'text-white'}`} />
             ) : (
-              <Menu className="size-6 text-[#3795b4]" />
+              <Menu className={`size-6 transition-colors duration-300 ${isScrolled ? 'text-[#3795b4]' : 'text-white'}`} />
             )}
           </button>
         </div>
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden border-t border-[#3795b4]/20 bg-[#f7f3e8] animate-in slide-in-from-top duration-300">
+          <div className={`md:hidden border-t animate-in slide-in-from-top duration-300 ${
+            isScrolled 
+              ? 'border-[#3795b4]/20 bg-white/95 backdrop-blur-sm' 
+              : 'border-white/20 bg-black/40 backdrop-blur-sm'
+          }`}>
             <nav className="px-8 py-6 space-y-4 max-w-[1280px] mx-auto">
               {[
                 { id: 'refugio', label: 'Inicio' },
@@ -214,8 +234,14 @@ export default function App() {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`font-['Inter',sans-serif] text-[15px] transition-all duration-300 hover:text-[#3795b4] hover:translate-x-2 block w-full text-left ${
-                    activeSection === item.id ? 'text-[#3795b4] font-medium' : 'text-black font-normal'
+                  className={`font-['DM_Sans',sans-serif] text-[15px] transition-all duration-300 hover:translate-x-2 block w-full text-left ${
+                    isScrolled
+                      ? activeSection === item.id 
+                        ? 'text-[#f4d03f] font-medium' 
+                        : 'text-black font-normal hover:text-[#3795b4]'
+                      : activeSection === item.id 
+                        ? 'text-[#f4d03f] font-medium' 
+                        : 'text-white font-normal hover:text-[#f4d03f]'
                   }`}
                 >
                   {item.label}
@@ -223,7 +249,7 @@ export default function App() {
               ))}
               <button
                 onClick={() => scrollToSection('reserva')}
-                className="w-full px-6 py-2.5 bg-[#f4d03f] rounded-full font-['Inter',sans-serif] text-[15px] text-black font-medium transition-all duration-300 hover:bg-[#e5c236] text-center hover:scale-105"
+                className="w-full px-6 py-2.5 bg-[#f4d03f] rounded-full font-['DM_Sans',sans-serif] text-[15px] text-black font-medium transition-all duration-300 hover:bg-[#e5c236] text-center hover:scale-105"
               >
                 Reservar
               </button>
@@ -232,81 +258,48 @@ export default function App() {
         )}
       </header>
 
-      {/* Main Content - starts after header */}
-      <main className="pt-[73px]">
-        {/* Refugio Section - Hero */}
-        <section id="refugio" className="relative py-20 lg:py-28 bg-[#f7f3e8] overflow-hidden">
-          {/* Subtle texture overlay */}
-          <div className="absolute inset-0 opacity-[0.015] pointer-events-none" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-          }} />
+      {/* Main Content */}
+      <main>
+        {/* Refugio Section - Hero with Full Screen Video Background */}
+        <section id="refugio" className="relative h-screen w-full overflow-hidden">
+          {/* Video Background */}
+          <video
+            className="absolute inset-0 w-full h-full object-cover"
+            autoPlay
+            loop
+            muted
+            playsInline
+          >
+            <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/video%20hero-5Vzg9fNNMZFPJpaPETrN5zh6vWbigw.mp4" type="video/mp4" />
+            Tu navegador no soporta el elemento de video.
+          </video>
 
-          <div className="max-w-[1280px] mx-auto px-8 lg:px-20 relative">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-              {/* Video Container */}
-              <div className="relative order-2 lg:order-1 group">
-                {/* Hand-drawn frame effect - THICKER, MORE VISIBLE */}
-                <div className="absolute -inset-4 border-[5px] border-[#a8d8d8] rounded-lg transition-transform duration-500 group-hover:scale-[1.02]" style={{
-                  transform: 'rotate(-1deg)'
-                }} />
+          {/* Left-side Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
 
-                <div className="relative rounded-lg overflow-hidden shadow-xl transition-all duration-500 group-hover:shadow-2xl bg-[#3795b4]/10">
-                  {/* Video Placeholder - Replace with actual video */}
-                  <div className="w-full h-[400px] lg:h-[520px] flex items-center justify-center bg-gradient-to-br from-[#a8d8d8]/30 to-[#c7e0e5]/30 relative">
-                    {/* Placeholder content */}
-                    <div className="text-center space-y-4 z-10">
-                      <svg className="mx-auto size-20 text-[#3795b4] opacity-40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                      <p className="font-['Inter',sans-serif] text-[15px] text-[#3795b4]/60 font-medium">
-                        Video con dron de Finka Azul
-                      </p>
-                    </div>
-                    {/* Background pattern */}
-                    <div className="absolute inset-0 opacity-5" style={{
-                      backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20.5V18H0v-2h20v-2H0v-2h20v-2H0V8h20V6H0V4h20V2H0V0h22v20h2V0h2v20h2V0h2v20h2V0h2v20h2V0h2v20h2v2H20v-1.5zM0 20h2v20H0V20zm4 0h2v20H4V20zm4 0h2v20H8V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2z' fill='%233795b4' fill-opacity='1' fill-rule='evenodd'/%3E%3C/svg%3E")`
-                    }} />
-                  </div>
-
-                  {/* Uncomment and replace with your video URL */}
-                  {/* <video
-                    className="w-full h-[400px] lg:h-[520px] object-cover"
-                    controls
-                    poster="/path/to/thumbnail.jpg"
-                  >
-                    <source src="/path/to/drone-video.mp4" type="video/mp4" />
-                    Tu navegador no soporta el elemento de video.
-                  </video> */}
-                </div>
-
-                {/* Decorative stamp - bottom right - BIGGER */}
-                <HandDrawnStamp
-                  className="absolute -bottom-14 -right-14 transition-all duration-500 hover:rotate-[20deg] hover:scale-110"
-                  rotation={12}
-                  color="#a8d8d8"
-                />
-
-                {/* Additional decorative element */}
-                <div className="absolute top-8 -left-6 size-[60px] rounded-full border-[3px] border-[#f4d03f] opacity-60 transition-all duration-700 group-hover:scale-125" />
-              </div>
-
-              {/* Content */}
-              <div className="space-y-6 order-1 lg:order-2">
-                <h1 className="font-['Playfair_Display',serif] font-normal text-[#3795b4] text-[40px] lg:text-[52px] leading-[1.15] transition-all duration-300 hover:text-[#2e7a91]">
-                  Un refugio rural en el corazón del Caribe
-                </h1>
-                <p className="font-['Jost',sans-serif] font-light text-[18px] text-black leading-[1.6] transition-opacity duration-300 hover:opacity-80">
-                  Reconecta con la tierra, respira aire puro y vive el ritmo pausado de la naturaleza en nuestro espacio eco-rural en Patillas, Puerto Rico.
-                </p>
-                <button
-                  onClick={() => scrollToSection('reserva')}
-                  className="inline-block px-8 py-3 bg-[#f4d03f] rounded-full font-['Inter',sans-serif] font-medium text-[16px] text-black transition-all duration-300 hover:bg-[#e5c236] hover:shadow-lg hover:scale-105 hover:-translate-y-1"
-                >
-                  Reserva ahora
-                </button>
-              </div>
+          {/* Content - Left Aligned */}
+          <div className="relative z-10 h-full flex flex-col items-start justify-center px-8 lg:px-20 xl:px-28 text-left pt-24 lg:pt-32">
+            <div className="max-w-[650px] flex flex-col">
+              <h1 className="font-['Fraunces',serif] font-normal italic text-white text-[48px] lg:text-[72px] xl:text-[80px] leading-[1.1] drop-shadow-lg">
+                Un refugio rural en el corazón del <span className="text-[#F5C842]">Caribe</span>
+              </h1>
+              <p className="font-['Lora',serif] font-light text-[15px] lg:text-[17px] text-white/80 leading-[1.7] drop-shadow-md max-w-[500px] mt-6 pl-5 border-l-[3px] border-[#4ECDC4]">
+                Reconecta con la tierra, respira aire puro y vive el ritmo pausado de la naturaleza en nuestro espacio eco-rural en Patillas, Puerto Rico.
+              </p>
+              <button
+                onClick={() => scrollToSection('reserva')}
+                className="inline-block px-8 py-3 bg-[#f4d03f] rounded-full font-['DM_Sans',sans-serif] font-medium text-[16px] text-black transition-all duration-300 hover:bg-[#e5c236] hover:scale-105 hover:-translate-y-1 mt-10 w-fit shadow-[0_4px_20px_rgba(245,200,66,0.4)] hover:shadow-[0_6px_25px_rgba(245,200,66,0.6)]"
+              >
+                Reserva ahora
+              </button>
             </div>
+          </div>
+
+          {/* Scroll indicator */}
+          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
+            <svg className="w-6 h-6 text-white/70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
           </div>
         </section>
 
@@ -335,10 +328,10 @@ export default function App() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               {/* Content */}
               <div className="space-y-6">
-                <h2 className="font-['Playfair_Display',serif] font-normal text-[#3795b4] text-[36px] lg:text-[44px] leading-[1.15] transition-all duration-300 hover:text-[#2e7a91]">
+                <h2 className="font-['Fraunces',serif] font-normal text-[#3795b4] text-[36px] lg:text-[44px] leading-[1.15] transition-all duration-300 hover:text-[#2e7a91]">
                   Hecho con amor
                 </h2>
-                <p className="font-['Jost',sans-serif] font-light text-[17px] text-black leading-[1.6] transition-opacity duration-300 hover:opacity-80">
+                <p className="font-['Lora',serif] font-normal text-[17px] text-black leading-[1.6] transition-opacity duration-300 hover:opacity-80">
                   Finka Azul nació del deseo profundo de Don Antonio y Elba de crear un lugar que reflejara su filosofía de vida: una forma de habitar el mundo con calma y respeto por la naturaleza. Cada rincón de la finca fue pensado para que quienes la visitan puedan conectar con esa esencia, vivir experiencias auténticas y sentir la serenidad que ellos han cultivado.
                 </p>
               </div>
@@ -362,6 +355,13 @@ export default function App() {
           </div>
         </section>
 
+        {/* Wavy Separator */}
+        <div className="relative bg-[#a8d8d8]">
+          <svg className="w-full h-16 lg:h-24" viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0,0 C320,100 420,100 720,50 C1020,0 1120,0 1440,100 L1440,100 L0,100 Z" fill="#f7f3e8" />
+          </svg>
+        </div>
+
         {/* La Experiencia Section */}
         <section id="experiencia" className="relative py-20 lg:py-28 bg-[#f7f3e8] overflow-hidden">
           {/* Subtle dot pattern */}
@@ -373,58 +373,107 @@ export default function App() {
           <div className="max-w-[1280px] mx-auto px-8 lg:px-20 relative">
             {/* Header */}
             <div className="text-center mb-16 space-y-6 max-w-[900px] mx-auto">
-              <h2 className="font-['Playfair_Display',serif] font-normal text-[40px] lg:text-[52px] text-black leading-[1.15] transition-all duration-300 hover:text-[#3795b4]">
+              <h2 className="font-['Fraunces',serif] font-normal text-[40px] lg:text-[52px] text-black leading-[1.15] transition-all duration-300 hover:text-[#3795b4]">
                 La experiencia
               </h2>
-              <p className="font-['Jost',sans-serif] font-light text-[17px] text-black leading-[1.6] transition-opacity duration-300 hover:opacity-80">
+              <p className="font-['Lora',serif] font-normal text-[17px] text-black leading-[1.6] transition-opacity duration-300 hover:opacity-80">
                 En la costa rural de Patillas, entre jardines vivos, palmas y el murmullo constante del agua, descubrirás un espacio para pausar y reconectar con lo esencial. La experiencia en Finka Azul es íntima, auténtica y profundamente natural.
               </p>
             </div>
 
             {/* Features Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8 relative">
-              {/* Desconexión real */}
-              <div className="relative border border-black p-8 rounded-lg bg-white/50 transition-all duration-500 hover:shadow-xl hover:scale-[1.02] hover:bg-white/70 mt-12 md:mt-0 group">
-                <div className="absolute -top-12 left-8 size-[72px] rounded-full bg-[#8DC5C2] transition-all duration-500 group-hover:scale-110 group-hover:rotate-12" />
-                <h3 className="font-['Playfair_Display',serif] font-normal text-[28px] text-black leading-[1.2] mb-4 transition-colors duration-300 group-hover:text-[#3795b4]">
+              {/* Desconexión real - Turquesa pastel */}
+              <div className="relative p-8 rounded-2xl bg-[#d4eeeb] transition-all duration-500 hover:shadow-xl hover:scale-[1.02] group overflow-hidden border border-[#b8ddd8]">
+                {/* Decorative palm leaf pattern */}
+                <div className="absolute -right-8 -top-8 w-32 h-32 opacity-[0.08]">
+                  <svg viewBox="0 0 100 100" fill="currentColor" className="text-[#2d5a52]">
+                    <path d="M50,10 Q30,30 20,60 Q40,50 50,50 Q60,50 80,60 Q70,30 50,10 Z" />
+                  </svg>
+                </div>
+                {/* Icon - Palm tree for disconnection */}
+                <div className="w-14 h-14 rounded-full bg-[#a8d5cf] flex items-center justify-center mb-6 transition-all duration-500 group-hover:scale-110 group-hover:bg-[#8ec5bd]">
+                  <svg className="w-7 h-7 text-[#2d5a52]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 3c-1.5 2-3 4-3 6s1.5 3 3 3 3-1 3-3-1.5-4-3-6zM12 12v9M8 21h8M6 8c-2 0-4 1-4 3s2 2 4 1M18 8c2 0 4 1 4 3s-2 2-4 1M4 5c1 1 3 2 5 1M20 5c-1 1-3 2-5 1" />
+                  </svg>
+                </div>
+                <h3 className="font-['Fraunces',serif] font-normal text-[28px] text-[#2d3a38] leading-[1.2] mb-4 transition-colors duration-300">
                   Desconexión real
                 </h3>
-                <p className="font-['Jost',sans-serif] font-extralight text-[16px] text-black leading-[1.6]">
+                <p className="font-['Lora',serif] font-normal text-[16px] text-[#3d4a47] leading-[1.6]">
                   Privacidad total, cero tráfico y sonidos completamente naturales.
                   <br /><br />
                   Un descanso que no se encuentra en hoteles ni zonas turísticas.
                 </p>
               </div>
 
-              {/* Agricultura sostenible */}
-              <div className="relative border border-black p-8 rounded-lg bg-white/50 transition-all duration-500 hover:shadow-xl hover:scale-[1.02] hover:bg-white/70 group">
-                <h3 className="font-['Playfair_Display',serif] font-normal text-[28px] text-black leading-[1.2] mb-4 transition-colors duration-300 group-hover:text-[#3795b4]">
+              {/* Agricultura sostenible - Verde salvia suave */}
+              <div className="relative p-8 rounded-2xl bg-[#dce8dc] transition-all duration-500 hover:shadow-xl hover:scale-[1.02] group overflow-hidden border border-[#c5d9c5]">
+                {/* Decorative leaf pattern */}
+                <div className="absolute -right-8 -top-8 w-32 h-32 opacity-[0.08]">
+                  <svg viewBox="0 0 100 100" fill="currentColor" className="text-[#3d5a3d]">
+                    <path d="M50,10 Q30,30 20,60 Q40,50 50,50 Q60,50 80,60 Q70,30 50,10 Z" />
+                  </svg>
+                </div>
+                {/* Icon - Leaf/Plant for agriculture */}
+                <div className="w-14 h-14 rounded-full bg-[#b8d4b8] flex items-center justify-center mb-6 transition-all duration-500 group-hover:scale-110 group-hover:bg-[#a3c9a3]">
+                  <svg className="w-7 h-7 text-[#3d5a3d]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 21c0-6 4-10 9-10-5 0-9-4-9-10 0 6-4 10-9 10 5 0 9 4 9 10z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 21V11" />
+                  </svg>
+                </div>
+                <h3 className="font-['Fraunces',serif] font-normal text-[28px] text-[#2d3a2d] leading-[1.2] mb-4 transition-colors duration-300">
                   Agricultura sostenible
                 </h3>
-                <p className="font-['Jost',sans-serif] font-extralight text-[16px] text-black leading-[1.6]">
+                <p className="font-['Lora',serif] font-normal text-[16px] text-[#3d4a3d] leading-[1.6]">
                   Más de 12 jardines ornamentales, áreas agrícolas y un cultivo responsable que revive el suelo y atrae vida.
                 </p>
               </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative">
-              {/* El agua como recurso sagrado */}
-              <div className="relative border border-black p-8 rounded-lg bg-white/50 transition-all duration-500 hover:shadow-xl hover:scale-[1.02] hover:bg-white/70 group">
-                <h3 className="font-['Playfair_Display',serif] font-normal text-[28px] text-black leading-[1.2] mb-4 transition-colors duration-300 group-hover:text-[#3795b4]">
+              {/* El agua como recurso sagrado - Azul cielo claro */}
+              <div className="relative p-8 rounded-2xl bg-[#dbe9f4] transition-all duration-500 hover:shadow-xl hover:scale-[1.02] group overflow-hidden border border-[#c4d9eb]">
+                {/* Decorative wave pattern */}
+                <div className="absolute -right-8 -bottom-8 w-32 h-32 opacity-[0.08]">
+                  <svg viewBox="0 0 100 100" fill="currentColor" className="text-[#2d4a5a]">
+                    <path d="M0,50 Q25,30 50,50 T100,50 L100,100 L0,100 Z" />
+                  </svg>
+                </div>
+                {/* Icon - Water droplet */}
+                <div className="w-14 h-14 rounded-full bg-[#b5d4e8] flex items-center justify-center mb-6 transition-all duration-500 group-hover:scale-110 group-hover:bg-[#9cc5de]">
+                  <svg className="w-7 h-7 text-[#2d4a5a]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 21c-4 0-7-3-7-7 0-5 7-11 7-11s7 6 7 11c0 4-3 7-7 7z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 18c-2 0-4-1.5-4-4" />
+                  </svg>
+                </div>
+                <h3 className="font-['Fraunces',serif] font-normal text-[28px] text-[#2d3a40] leading-[1.2] mb-4 transition-colors duration-300">
                   El agua como recurso sagrado
                 </h3>
-                <p className="font-['Jost',sans-serif] font-extralight text-[16px] text-black leading-[1.6]">
+                <p className="font-['Lora',serif] font-normal text-[16px] text-[#3d4a50] leading-[1.6]">
                   Dos quebradas bordean la finca y crean un ambiente fresco; el agua que utilizamos proviene del manantial y de la lluvia recolectada, cada gota se valora.
                 </p>
               </div>
 
-              {/* Comida típica */}
-              <div className="relative border border-black p-8 rounded-lg bg-white/50 transition-all duration-500 hover:shadow-xl hover:scale-[1.02] hover:bg-white/70 mb-12 md:mb-0 group">
-                <div className="absolute -bottom-12 right-8 size-[72px] rounded-full bg-[#8DC5C2] transition-all duration-500 group-hover:scale-110 group-hover:rotate-[-12deg]" />
-                <h3 className="font-['Playfair_Display',serif] font-normal text-[28px] text-black leading-[1.2] mb-4 transition-colors duration-300 group-hover:text-[#3795b4]">
+              {/* Comida típica - Amarillo arena cálido */}
+              <div className="relative p-8 rounded-2xl bg-[#f5edd8] transition-all duration-500 hover:shadow-xl hover:scale-[1.02] group overflow-hidden border border-[#e8dfc5]">
+                {/* Decorative fruit pattern */}
+                <div className="absolute -right-8 -top-8 w-32 h-32 opacity-[0.08]">
+                  <svg viewBox="0 0 100 100" fill="currentColor" className="text-[#6b5a3d]">
+                    <circle cx="50" cy="50" r="30" />
+                  </svg>
+                </div>
+                {/* Icon - Tropical fruit/food */}
+                <div className="w-14 h-14 rounded-full bg-[#e8dbb8] flex items-center justify-center mb-6 transition-all duration-500 group-hover:scale-110 group-hover:bg-[#dccfa3]">
+                  <svg className="w-7 h-7 text-[#6b5a3d]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 6c3 0 5 2 5 5 0 4-2 8-5 10-3-2-5-6-5-10 0-3 2-5 5-5z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 6V3M10 4c1-1 3-1 4 0" />
+                  </svg>
+                </div>
+                <h3 className="font-['Fraunces',serif] font-normal text-[28px] text-[#3d3a2d] leading-[1.2] mb-4 transition-colors duration-300">
                   Comida típica
                 </h3>
-                <p className="font-['Jost',sans-serif] font-extralight text-[16px] text-black leading-[1.6]">
+                <p className="font-['Lora',serif] font-normal text-[16px] text-[#4a473d] leading-[1.6]">
                   Con ingredientes cosechados en la finca, la Chef Elba transforma lo simple en platos llenos de sabor puertorriqueño, tradición y cariño.
                 </p>
               </div>
@@ -448,27 +497,27 @@ export default function App() {
               {/* Content */}
               <div className="space-y-6">
                 <div>
-                  <h2 className="font-['Playfair_Display',serif] font-semibold text-[#3795b4] text-[36px] lg:text-[44px] leading-[1.2] transition-all duration-300 hover:text-[#2e7a91]">
+                  <h2 className="font-['Fraunces',serif] font-semibold text-[#3795b4] text-[36px] lg:text-[44px] leading-[1.2] transition-all duration-300 hover:text-[#2e7a91]">
                     Kabaña Azul
                   </h2>
                   <div className="bg-black h-[3px] w-[70px] mt-4 mb-6 transition-all duration-500 hover:w-[90px]" />
                 </div>
 
-                <p className="font-['Playfair_Display',serif] font-normal italic text-[20px] text-black leading-[1.4] transition-opacity duration-300 hover:opacity-80">
+                <p className="font-['Fraunces',serif] font-normal italic text-[20px] text-black leading-[1.4] transition-opacity duration-300 hover:opacity-80">
                   Tu pequeña casa cerca del mar.
                 </p>
 
-                <p className="font-['Inter',sans-serif] font-normal text-[16px] text-black leading-[1.6] transition-opacity duration-300 hover:opacity-80">
+                <p className="font-['Lora',serif] font-normal text-[16px] text-black leading-[1.6] transition-opacity duration-300 hover:opacity-80">
                   Una acogedora cabaña de madera rodeada de palmas, flores y el canto del coquí.
                 </p>
 
-                <p className="font-['Inter',sans-serif] font-normal text-[16px] text-black leading-[1.6] transition-opacity duration-300 hover:opacity-80">
+                <p className="font-['Lora',serif] font-normal text-[16px] text-black leading-[1.6] transition-opacity duration-300 hover:opacity-80">
                   Sencilla, auténtica y perfecta para quienes buscan descansar en medio de la naturaleza.
                 </p>
 
                 {/* Amenities */}
                 <div className="pt-4">
-                  <h3 className="font-['Playfair_Display',serif] font-semibold text-[20px] text-black mb-5">
+                  <h3 className="font-['Fraunces',serif] font-semibold text-[20px] text-black mb-5">
                     Incluye
                   </h3>
 
@@ -530,7 +579,7 @@ export default function App() {
                         className="flex items-center gap-3 bg-white/50 rounded-lg px-4 py-3 transition-all duration-300 hover:bg-white/70 hover:scale-105 hover:shadow-md"
                       >
                         <div className="shrink-0 transition-transform duration-300 hover:scale-110">{amenity.icon}</div>
-                        <p className="font-['Inter',sans-serif] font-medium text-[#556b2f] text-[15px]">
+                        <p className="font-['Lora',serif] font-medium text-[#556b2f] text-[15px]">
                           {amenity.text}
                         </p>
                       </div>
@@ -538,7 +587,7 @@ export default function App() {
                   </div>
                 </div>
 
-                <p className="font-['Inter',sans-serif] font-normal italic text-[15px] text-black leading-[1.6] pt-2 transition-opacity duration-300 hover:opacity-80">
+                <p className="font-['Lora',serif] font-normal italic text-[15px] text-black leading-[1.6] pt-2 transition-opacity duration-300 hover:opacity-80">
                   Un espacio privado y tranquilo donde el ritmo de la naturaleza se convierte en parte de tu estancia.
                 </p>
               </div>
@@ -585,7 +634,7 @@ export default function App() {
               <div className="space-y-8">
                 {/* Heading */}
                 <div>
-                  <h2 className="font-['Playfair_Display',serif] font-semibold text-[36px] lg:text-[44px] text-[#3795b4] leading-[1.2] max-w-[600px] transition-all duration-300 hover:text-[#2e7a91]">
+                  <h2 className="font-['Fraunces',serif] font-semibold text-[36px] lg:text-[44px] text-[#3795b4] leading-[1.2] max-w-[600px] transition-all duration-300 hover:text-[#2e7a91]">
                     Un paisaje donde se encuentran el mar y la montaña
                   </h2>
                   <div className="bg-[#3795b4] h-[4px] w-[100px] mt-6 rounded-full transition-all duration-500 hover:w-[120px]" />
@@ -593,17 +642,17 @@ export default function App() {
 
                 {/* Description paragraphs */}
                 <div className="space-y-6">
-                  <p className="font-['Inter',sans-serif] font-normal text-[17px] text-black leading-[1.6] transition-opacity duration-300 hover:opacity-80">
+                  <p className="font-['Lora',serif] font-normal text-[17px] text-black leading-[1.6] transition-opacity duration-300 hover:opacity-80">
                     Patillas es uno de los tesoros naturales de Puerto Rico, un lugar donde el mar Caribe, los ríos, las montañas y los bosques tropicales conviven en un mismo territorio.
                   </p>
-                  <p className="font-['Inter',sans-serif] font-normal text-[17px] text-black leading-[1.6] transition-opacity duration-300 hover:opacity-80">
+                  <p className="font-['Lora',serif] font-normal text-[17px] text-black leading-[1.6] transition-opacity duration-300 hover:opacity-80">
                     Un destino perfecto para quienes disfrutan la naturaleza, la fotografía y la vida tranquila.
                   </p>
                 </div>
 
                 {/* Cercano a ti section */}
                 <div className="pt-4 space-y-6">
-                  <h3 className="font-['Playfair_Display',serif] font-semibold text-[#3795b4] text-[28px] leading-[1.2]">
+                  <h3 className="font-['Fraunces',serif] font-semibold text-[#3795b4] text-[28px] leading-[1.2]">
                     Cercano a ti
                   </h3>
 
@@ -619,7 +668,7 @@ export default function App() {
                             <path d={svgLocation.p2e9bce00} stroke="#3795b4" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" />
                           </svg>
                         </div>
-                        <p className="font-['Inter',sans-serif] font-normal text-[17px] text-black leading-[1.5]">
+                        <p className="font-['Lora',serif] font-normal text-[17px] text-black leading-[1.5]">
                           Nueve playas a menos de 10 km
                         </p>
                       </div>
@@ -634,7 +683,7 @@ export default function App() {
                             <path d={svgLocation.p18232e00} stroke="#3795b4" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" />
                           </svg>
                         </div>
-                        <p className="font-['Inter',sans-serif] font-normal text-[17px] text-black leading-[1.5]">
+                        <p className="font-['Lora',serif] font-normal text-[17px] text-black leading-[1.5]">
                           1 h 45 min del aeropuerto de San Juan
                         </p>
                       </div>
@@ -648,7 +697,7 @@ export default function App() {
                             <path d={svgLocation.pf1aa180} stroke="#3795b4" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" />
                           </svg>
                         </div>
-                        <p className="font-['Inter',sans-serif] font-normal text-[17px] text-black leading-[1.5]">
+                        <p className="font-['Lora',serif] font-normal text-[17px] text-black leading-[1.5]">
                           45 min del ferry hacia Vieques y Culebra
                         </p>
                       </div>
@@ -662,7 +711,7 @@ export default function App() {
                             <path d={svgLocation.p190eab00} stroke="#3795b4" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" />
                           </svg>
                         </div>
-                        <p className="font-['Inter',sans-serif] font-normal text-[17px] text-black leading-[1.5]">
+                        <p className="font-['Lora',serif] font-normal text-[17px] text-black leading-[1.5]">
                           45 min de las aguas termales de Coamo
                         </p>
                       </div>
@@ -700,7 +749,7 @@ export default function App() {
           <div className="max-w-[1100px] mx-auto px-8 lg:px-20 relative">
             <div className="flex flex-col items-center text-center space-y-12">
               {/* Top tagline */}
-              <h3 className="font-['Playfair_Display',serif] font-semibold text-[#3795b4] text-[36px] lg:text-[44px] leading-[1.2] max-w-[900px] transition-all duration-300 hover:text-[#2e7a91]">
+              <h3 className="font-['Fraunces',serif] font-semibold text-[#3795b4] text-[36px] lg:text-[44px] leading-[1.2] max-w-[900px] transition-all duration-300 hover:text-[#2e7a91]">
                 Un lujo diferente, desconectar para conectar
               </h3>
 
@@ -708,17 +757,17 @@ export default function App() {
               <CalendarIcon className="transition-all duration-500 hover:scale-110" />
 
               {/* Main Heading */}
-              <h2 className="font-['Playfair_Display',serif] font-semibold text-[36px] lg:text-[44px] text-black leading-[1.2] max-w-[700px]">
+              <h2 className="font-['Fraunces',serif] font-semibold text-[36px] lg:text-[44px] text-black leading-[1.2] max-w-[700px]">
                 Planea tu estancia en Finka Azul
               </h2>
 
               {/* Description */}
-              <p className="font-['Inter',sans-serif] font-normal text-[17px] text-black leading-[1.6] max-w-[800px]">
+              <p className="font-['Lora',serif] font-normal text-[17px] text-black leading-[1.6] max-w-[800px]">
                 Elige tus fechas, confirma tu reserva y prepárate para una experiencia tranquila rodeada de naturaleza.
               </p>
 
               {/* CTA Button */}
-              <button className="px-10 py-4 bg-[#a8d8d8] rounded-full font-['Playfair_Display',serif] font-normal text-[18px] text-black leading-[1.4] transition-all duration-300 hover:bg-[#98c8c8] hover:shadow-xl hover:scale-110 hover:-translate-y-1">
+              <button className="px-10 py-4 bg-[#a8d8d8] rounded-full font-['Fraunces',serif] font-normal text-[18px] text-black leading-[1.4] transition-all duration-300 hover:bg-[#98c8c8] hover:shadow-xl hover:scale-110 hover:-translate-y-1">
                 Reserva ahora
               </button>
             </div>
@@ -738,17 +787,17 @@ export default function App() {
                     className="h-[56px] w-auto"
                   />
                 </div>
-                <p className="font-['Inter',sans-serif] text-[15px] text-black leading-[1.6] transition-opacity duration-300 hover:opacity-80">
+                <p className="font-['Lora',serif] text-[15px] text-black leading-[1.6] transition-opacity duration-300 hover:opacity-80">
                   Un refugio rural en el corazón del Caribe. Reconecta con la naturaleza en Patillas, Puerto Rico.
                 </p>
               </div>
 
               {/* Contacto */}
               <div>
-                <h3 className="font-['Playfair_Display',serif] font-semibold text-[20px] text-black mb-4">
+                <h3 className="font-['Fraunces',serif] font-semibold text-[20px] text-black mb-4">
                   Contacto
                 </h3>
-                <ul className="space-y-2 font-['Inter',sans-serif] text-[15px] text-black leading-[1.6]">
+                <ul className="space-y-2 font-['Lora',serif] text-[15px] text-black leading-[1.6]">
                   <li className="transition-all duration-300 hover:translate-x-1 hover:text-[#3795b4]">Patillas, Puerto Rico</li>
                   <li className="transition-all duration-300 hover:translate-x-1 hover:text-[#3795b4]">info@finkaazul.com</li>
                   <li className="transition-all duration-300 hover:translate-x-1 hover:text-[#3795b4]">(787) 555-1234</li>
@@ -757,10 +806,10 @@ export default function App() {
 
               {/* Enlaces */}
               <div>
-                <h3 className="font-['Playfair_Display',serif] font-semibold text-[20px] text-black mb-4">
+                <h3 className="font-['Fraunces',serif] font-semibold text-[20px] text-black mb-4">
                   Enlaces
                 </h3>
-                <ul className="space-y-2 font-['Inter',sans-serif] text-[15px]">
+                <ul className="space-y-2 font-['Lora',serif] text-[15px]">
                   {['Inicio', 'Nosotros', 'Experiencia', 'Cabaña', 'Reservar'].map((link) => (
                     <li key={link}>
                       <a href="#" className="text-black hover:text-[#3795b4] transition-all duration-300 hover:translate-x-1 inline-block">
@@ -773,7 +822,7 @@ export default function App() {
             </div>
 
             <div className="border-t border-black/20 pt-8">
-              <p className="font-['Inter',sans-serif] text-[13px] text-black/80 text-center leading-[1.5] transition-opacity duration-300 hover:opacity-100">
+              <p className="font-['Lora',serif] text-[13px] text-black/80 text-center leading-[1.5] transition-opacity duration-300 hover:opacity-100">
                 © 2024 Finka Azul. Todos los derechos reservados. | Política de privacidad | Términos y condiciones
               </p>
             </div>
