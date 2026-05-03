@@ -296,25 +296,21 @@ export default function App() {
           </div>
 
           {/* Scroll indicator */}
-          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
+          <div className="absolute bottom-16 lg:bottom-24 left-1/2 -translate-x-1/2 z-10 animate-bounce">
             <svg className="w-6 h-6 text-white/70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
             </svg>
           </div>
+
+          {/* Diagonal cut overlay at bottom */}
+          <div 
+            className="absolute bottom-0 left-0 right-0 h-20 lg:h-32 bg-[#2AACB8]"
+            style={{ clipPath: 'polygon(0 100%, 100% 0, 100% 100%)' }}
+          />
         </section>
 
-        {/* Wave Divider - Hero to Hecho con Amor */}
-        <div className="relative w-full -mb-1">
-          <svg className="w-full h-20 lg:h-32" viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-            <path 
-              d="M0,60 C240,120 480,0 720,60 C960,120 1200,0 1440,60 L1440,120 L0,120 Z" 
-              fill="#2AACB8"
-            />
-          </svg>
-        </div>
-
         {/* Hecho con Amor Section */}
-        <section id="amor" className="relative pt-12 lg:pt-16 pb-20 lg:pb-28 bg-[#2AACB8] overflow-hidden">
+        <section id="amor" className="relative pt-8 lg:pt-12 pb-20 lg:pb-28 bg-[#2AACB8] overflow-hidden">
           <div className="max-w-[1280px] mx-auto px-8 lg:px-20 relative">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
               {/* Content */}
