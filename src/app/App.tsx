@@ -296,14 +296,11 @@ export default function App() {
           </div>
 
           {/* Scroll indicator */}
-          <div className="absolute bottom-40 left-1/2 -translate-x-1/2 z-10 animate-bounce">
+          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
             <svg className="w-6 h-6 text-white/70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
             </svg>
           </div>
-
-          {/* Gradient fade to turquoise */}
-          <div className="absolute bottom-0 left-0 right-0 h-[150px] bg-gradient-to-b from-transparent to-[#2AACB8] pointer-events-none" />
         </section>
 
         {/* Hecho con Amor Section */}
@@ -339,78 +336,108 @@ export default function App() {
               </div>
             </div>
           </div>
-          {/* Gradient fade to next section */}
-          <div className="absolute bottom-0 left-0 right-0 h-[150px] bg-gradient-to-b from-transparent to-[#f7f3e8] pointer-events-none" />
         </section>
 
-        {/* La Experiencia Section */}
-        <section id="experiencia" className="relative py-20 bg-white overflow-hidden">
-
+        {/* La Experiencia Section - Editorial Style */}
+        <section id="experiencia" className="relative py-16 lg:py-20 bg-[#2E7EA6] overflow-hidden">
           <div className="max-w-[1280px] mx-auto px-8 lg:px-20 relative">
             {/* Header */}
-            <div className="text-center mb-16 space-y-6 max-w-[900px] mx-auto">
-              <h2 className="font-['Fraunces',serif] font-normal text-[40px] lg:text-[52px] text-black leading-[1.15] transition-all duration-300 hover:text-[#3795b4]">
-                La experiencia
+            <div className="text-center mb-12 lg:mb-14">
+              <h2 className="font-['Cormorant_Garamond',serif] font-normal italic text-[36px] lg:text-[48px] text-white leading-[1.15] mb-5">
+                La Experiencia
               </h2>
-              <p className="font-['Lora',serif] font-normal text-[17px] text-black leading-[1.6] transition-opacity duration-300 hover:opacity-80">
-                En la costa rural de Patillas, entre jardines vivos, palmas y el murmullo constante del agua, descubrirás un espacio para pausar y reconectar con lo esencial. La experiencia en Finka Azul es íntima, auténtica y profundamente natural.
+              <p className="font-['Jost',sans-serif] font-light text-[15px] text-white/65 leading-[1.7] max-w-[560px] mx-auto">
+                En la costa rural de Patillas, entre jardines vivos, palmas y el murmullo constante del agua, descubrirás un espacio para pausar y reconectar con lo esencial.
               </p>
             </div>
 
-            {/* Features Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8 relative">
-              {/* Desconexión real */}
-              <div className="relative p-8 rounded-xl bg-white shadow-[0_4px_20px_rgba(0,0,0,0.08)] transition-all duration-500 hover:shadow-[0_8px_30px_rgba(0,0,0,0.12)] hover:scale-[1.02] border-t-4 border-[#2AACB8]">
-                <span className="text-4xl mb-6 block">🌿</span>
-                <h3 className="font-['Fraunces',serif] font-normal text-[28px] text-[#1a1a1a] leading-[1.2] mb-4">
-                  Desconexión real
-                </h3>
-                <p className="font-['Lora',serif] font-normal text-[16px] text-[#444] leading-[1.6]">
-                  Privacidad total, cero tráfico y sonidos completamente naturales.
-                  <br /><br />
-                  Un descanso que no se encuentra en hoteles ni zonas turísticas.
-                </p>
+            {/* 4 Pillars - Editorial Layout */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0">
+              {/* Pillar 1 - Desconexión Real */}
+              <div className="relative pt-6 pb-8 px-5 lg:border-r lg:border-white/[0.08]">
+                <div className="border-t border-white/[0.12] pt-5">
+                  <span className="absolute top-2 left-5 font-['Cormorant_Garamond',serif] text-[4rem] leading-none text-white/[0.08] select-none">01</span>
+                  {/* Hand-drawn leaf/branch icon */}
+                  <svg className="w-6 h-6 mb-4 text-[#F5F0E4]/70" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M6 21c3-3 7-5 12-5" />
+                    <path d="M18 16c-3-8-10-11-16-10 2 5 6 10 16 10z" />
+                    <path d="M12 12c-2 2-4 5-4 8" />
+                  </svg>
+                  <h3 className="font-['Cormorant_Garamond',serif] text-[1.4rem] text-[#F5F0E4] leading-[1.3] mb-3">
+                    Desconexión Real
+                  </h3>
+                  <p className="font-['Jost',sans-serif] font-light text-[0.85rem] text-white/50 leading-[1.8]">
+                    Privacidad total, cero tráfico y sonidos completamente naturales. Un descanso que no se encuentra en hoteles ni zonas turísticas.
+                  </p>
+                </div>
               </div>
 
-              {/* Agricultura sostenible */}
-              <div className="relative p-8 rounded-xl bg-white shadow-[0_4px_20px_rgba(0,0,0,0.08)] transition-all duration-500 hover:shadow-[0_8px_30px_rgba(0,0,0,0.12)] hover:scale-[1.02] border-t-4 border-[#2AACB8]">
-                <span className="text-4xl mb-6 block">🌱</span>
-                <h3 className="font-['Fraunces',serif] font-normal text-[28px] text-[#1a1a1a] leading-[1.2] mb-4">
-                  Agricultura sostenible
-                </h3>
-                <p className="font-['Lora',serif] font-normal text-[16px] text-[#444] leading-[1.6]">
-                  Más de 12 jardines ornamentales, áreas agrícolas y un cultivo responsable que revive el suelo y atrae vida.
-                </p>
+              {/* Pillar 2 - Agricultura Sostenible */}
+              <div className="relative pt-6 pb-8 px-5 lg:border-r lg:border-white/[0.08]">
+                <div className="border-t border-white/[0.12] pt-5">
+                  <span className="absolute top-2 left-5 font-['Cormorant_Garamond',serif] text-[4rem] leading-none text-white/[0.08] select-none">02</span>
+                  {/* Hand-drawn sprout icon */}
+                  <svg className="w-6 h-6 mb-4 text-[#F5F0E4]/70" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M12 22V10" />
+                    <path d="M12 13c-2.5-3-7-3.5-9-1 3-1 6 1 9 4" />
+                    <path d="M12 10c2.5-3 7-3.5 9-1-3-1-6 1-9 4" />
+                    <path d="M12 6c0-3 2-5 5-5-1 2-2 4-5 5" />
+                  </svg>
+                  <h3 className="font-['Cormorant_Garamond',serif] text-[1.4rem] text-[#F5F0E4] leading-[1.3] mb-3">
+                    Agricultura Sostenible
+                  </h3>
+                  <p className="font-['Jost',sans-serif] font-light text-[0.85rem] text-white/50 leading-[1.8]">
+                    Más de 12 jardines ornamentales, áreas agrícolas y un cultivo responsable que revive el suelo y atrae vida.
+                  </p>
+                </div>
+              </div>
+
+              {/* Pillar 3 - El Agua como Recurso Sagrado */}
+              <div className="relative pt-6 pb-8 px-5 lg:border-r lg:border-white/[0.08]">
+                <div className="border-t border-white/[0.12] pt-5">
+                  <span className="absolute top-2 left-5 font-['Cormorant_Garamond',serif] text-[4rem] leading-none text-white/[0.08] select-none">03</span>
+                  {/* Hand-drawn water drop icon */}
+                  <svg className="w-6 h-6 mb-4 text-[#F5F0E4]/70" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M12 2c0 0-6 7-6 12a6 6 0 0 0 12 0c0-5-6-12-6-12z" />
+                    <path d="M9 15c0.5 1 1.5 2 3 2" />
+                  </svg>
+                  <h3 className="font-['Cormorant_Garamond',serif] text-[1.4rem] text-[#F5F0E4] leading-[1.3] mb-3">
+                    El Agua como Recurso Sagrado
+                  </h3>
+                  <p className="font-['Jost',sans-serif] font-light text-[0.85rem] text-white/50 leading-[1.8]">
+                    Dos quebradas bordean la finca. Agua de manantial y lluvia recolectada. Cada gota se valora, se respeta y se honra.
+                  </p>
+                </div>
+              </div>
+
+              {/* Pillar 4 - Anfitriones que Hacen la Diferencia */}
+              <div className="relative pt-6 pb-8 px-5">
+                <div className="border-t border-white/[0.12] pt-5">
+                  <span className="absolute top-2 left-5 font-['Cormorant_Garamond',serif] text-[4rem] leading-none text-white/[0.08] select-none">04</span>
+                  {/* Hand-drawn people silhouettes icon */}
+                  <svg className="w-6 h-6 mb-4 text-[#F5F0E4]/70" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="9" cy="7" r="3" />
+                    <circle cx="17" cy="7" r="2.5" />
+                    <path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" />
+                    <path d="M17 14c2 0 4 1.5 4 4v3" />
+                  </svg>
+                  <h3 className="font-['Cormorant_Garamond',serif] text-[1.4rem] text-[#F5F0E4] leading-[1.3] mb-3">
+                    Anfitriones que Hacen la Diferencia
+                  </h3>
+                  <p className="font-['Jost',sans-serif] font-light text-[0.85rem] text-white/50 leading-[1.8]">
+                    Antonio conoce cada planta, cada rincón. Chef Elba transforma ingredientes de la finca en platos llenos de sabor puertorriqueño y cariño.
+                  </p>
+                </div>
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative">
-              {/* El agua como recurso sagrado */}
-              <div className="relative p-8 rounded-xl bg-white shadow-[0_4px_20px_rgba(0,0,0,0.08)] transition-all duration-500 hover:shadow-[0_8px_30px_rgba(0,0,0,0.12)] hover:scale-[1.02] border-t-4 border-[#2AACB8]">
-                <span className="text-4xl mb-6 block">💧</span>
-                <h3 className="font-['Fraunces',serif] font-normal text-[28px] text-[#1a1a1a] leading-[1.2] mb-4">
-                  El agua como recurso sagrado
-                </h3>
-                <p className="font-['Lora',serif] font-normal text-[16px] text-[#444] leading-[1.6]">
-                  Dos quebradas bordean la finca y crean un ambiente fresco; el agua que utilizamos proviene del manantial y de la lluvia recolectada, cada gota se valora.
-                </p>
-              </div>
-
-              {/* Comida típica */}
-              <div className="relative p-8 rounded-xl bg-white shadow-[0_4px_20px_rgba(0,0,0,0.08)] transition-all duration-500 hover:shadow-[0_8px_30px_rgba(0,0,0,0.12)] hover:scale-[1.02] border-t-4 border-[#2AACB8]">
-                <span className="text-4xl mb-6 block">🍽️</span>
-                <h3 className="font-['Fraunces',serif] font-normal text-[28px] text-[#1a1a1a] leading-[1.2] mb-4">
-                  Comida típica
-                </h3>
-                <p className="font-['Lora',serif] font-normal text-[16px] text-[#444] leading-[1.6]">
-                  Con ingredientes cosechados en la finca, la Chef Elba transforma lo simple en platos llenos de sabor puertorriqueño, tradición y cariño.
-                </p>
-              </div>
+            {/* Closing Quote */}
+            <div className="text-center mt-12 lg:mt-14">
+              <p className="font-['Cormorant_Garamond',serif] italic text-[1.25rem] lg:text-[1.5rem] text-white/25 leading-[1.5] max-w-[600px] mx-auto">
+                "El lujo aquí no es material: es calma, silencio, naturaleza."
+              </p>
             </div>
           </div>
-
-          {/* Gradient fade to next section */}
-          <div className="absolute bottom-0 left-0 right-0 h-[150px] bg-gradient-to-b from-transparent to-[#E8F6F8] pointer-events-none" />
         </section>
 
         {/* Kabaña Azul Section */}
@@ -637,9 +664,6 @@ export default function App() {
               </div>
             </div>
           </div>
-
-          {/* Gradient fade to next section */}
-          <div className="absolute bottom-0 left-0 right-0 h-[150px] bg-gradient-to-b from-transparent to-white pointer-events-none" />
         </section>
 
         {/* CTA Section - CLEAN DESIGN */}
