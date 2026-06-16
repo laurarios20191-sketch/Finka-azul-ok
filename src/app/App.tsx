@@ -260,12 +260,12 @@ export default function App() {
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
 
           {/* Content - Left Aligned */}
-          <div className="relative z-10 h-full flex flex-col items-start justify-center px-8 sm:px-12 lg:px-24 xl:px-32 text-left pt-28 pb-36 lg:pt-32 lg:pb-48">
+          <div className="relative z-10 h-full flex flex-col items-start justify-center px-6 sm:px-12 lg:px-28 xl:px-40 text-left pt-28 pb-32 lg:pt-32 lg:pb-32">
             <div className="max-w-[640px] flex flex-col">
               <span className="font-['Oswald',sans-serif] uppercase tracking-[0.3em] text-[12px] lg:text-[13px] font-medium text-[#A8D8D8] mb-5 lg:mb-7 drop-shadow-md">
                 Patillas · Puerto Rico
               </span>
-              <h1 className="font-['Oswald',sans-serif] font-bold uppercase tracking-[0.02em] text-white text-[44px] sm:text-[56px] lg:text-[78px] xl:text-[88px] leading-[1.0] drop-shadow-lg text-balance">
+              <h1 className="font-['Oswald',sans-serif] font-bold uppercase tracking-[0.02em] text-white text-[40px] sm:text-[52px] lg:text-[64px] xl:text-[74px] leading-[1.05] drop-shadow-lg text-balance">
                 Un refugio rural en el corazón del <span className="text-[#F4D03F]">Caribe</span>
               </h1>
               <p className="font-['Lora',serif] font-light text-[16px] lg:text-[18px] text-white/85 leading-[1.7] drop-shadow-md max-w-[480px] mt-7 lg:mt-8 pl-5 border-l-[3px] border-[#A8D8D8]">
@@ -346,7 +346,7 @@ export default function App() {
                     <path d="M18 16c-3-8-10-11-16-10 2 5 6 10 16 10z" />
                     <path d="M12 12c-2 2-4 5-4 8" />
                   </svg>
-                  <h3 className="font-['Oswald',sans-serif] font-semibold uppercase tracking-[0.02em] text-[1.05rem] text-[#FF9D25] leading-[1.2] mb-3">
+                  <h3 className="font-['Oswald',sans-serif] font-semibold uppercase tracking-[0.02em] text-[1.05rem] text-[#366E6B] leading-[1.2] mb-3">
                     Desconexión Real
                   </h3>
                   <p className="font-['Lora',serif] font-normal text-[0.9rem] text-[#2A4A4A] leading-[1.7]">
@@ -365,7 +365,7 @@ export default function App() {
                     <path d="M12 10c2.5-3 7-3.5 9-1-3-1-6 1-9 4" />
                     <path d="M12 6c0-3 2-5 5-5-1 2-2 4-5 5" />
                   </svg>
-                  <h3 className="font-['Oswald',sans-serif] font-semibold uppercase tracking-[0.02em] text-[1.05rem] text-[#FF9D25] leading-[1.2] mb-3">
+                  <h3 className="font-['Oswald',sans-serif] font-semibold uppercase tracking-[0.02em] text-[1.05rem] text-[#366E6B] leading-[1.2] mb-3">
                     Agricultura Sostenible
                   </h3>
                   <p className="font-['Lora',serif] font-normal text-[0.9rem] text-[#2A4A4A] leading-[1.7]">
@@ -382,7 +382,7 @@ export default function App() {
                     <path d="M12 2c0 0-6 7-6 12a6 6 0 0 0 12 0c0-5-6-12-6-12z" />
                     <path d="M9 15c0.5 1 1.5 2 3 2" />
                   </svg>
-                  <h3 className="font-['Oswald',sans-serif] font-semibold uppercase tracking-[0.02em] text-[1.05rem] text-[#FF9D25] leading-[1.2] mb-3">
+                  <h3 className="font-['Oswald',sans-serif] font-semibold uppercase tracking-[0.02em] text-[1.05rem] text-[#366E6B] leading-[1.2] mb-3">
                     El Agua como Recurso Sagrado
                   </h3>
                   <p className="font-['Lora',serif] font-normal text-[0.9rem] text-[#2A4A4A] leading-[1.7]">
@@ -401,7 +401,7 @@ export default function App() {
                     <path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" />
                     <path d="M17 14c2 0 4 1.5 4 4v3" />
                   </svg>
-                  <h3 className="font-['Oswald',sans-serif] font-semibold uppercase tracking-[0.02em] text-[1.05rem] text-[#FF9D25] leading-[1.2] mb-3">
+                  <h3 className="font-['Oswald',sans-serif] font-semibold uppercase tracking-[0.02em] text-[1.05rem] text-[#366E6B] leading-[1.2] mb-3">
                     Anfitriones que Hacen la Diferencia
                   </h3>
                   <p className="font-['Lora',serif] font-normal text-[0.9rem] text-[#2A4A4A] leading-[1.7]">
