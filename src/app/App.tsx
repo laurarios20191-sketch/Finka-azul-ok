@@ -260,17 +260,20 @@ export default function App() {
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
 
           {/* Content - Left Aligned */}
-          <div className="relative z-10 h-full flex flex-col items-start justify-center px-8 lg:px-20 xl:px-28 text-left pt-24 lg:pt-32">
-            <div className="max-w-[650px] flex flex-col">
-              <h1 className="font-['Oswald',sans-serif] font-bold uppercase tracking-[0.02em] text-white text-[52px] lg:text-[80px] xl:text-[92px] leading-[0.98] drop-shadow-lg">
-                Un refugio rural en el corazón del <span className="text-[#A8D8D8]">Caribe</span>
+          <div className="relative z-10 h-full flex flex-col items-start justify-center px-8 sm:px-12 lg:px-24 xl:px-32 text-left pt-24 lg:pt-28">
+            <div className="max-w-[640px] flex flex-col">
+              <span className="font-['Oswald',sans-serif] uppercase tracking-[0.3em] text-[12px] lg:text-[13px] font-medium text-[#A8D8D8] mb-5 lg:mb-7 drop-shadow-md">
+                Patillas · Puerto Rico
+              </span>
+              <h1 className="font-['Oswald',sans-serif] font-bold uppercase tracking-[0.02em] text-[#FF9D25] text-[44px] sm:text-[56px] lg:text-[78px] xl:text-[88px] leading-[1.0] drop-shadow-lg text-balance">
+                Un refugio rural en el corazón del Caribe
               </h1>
-              <p className="font-['Lora',serif] font-light text-[15px] lg:text-[17px] text-white/85 leading-[1.7] drop-shadow-md max-w-[500px] mt-6 pl-5 border-l-[3px] border-[#A8D8D8]">
+              <p className="font-['Lora',serif] font-light text-[16px] lg:text-[18px] text-white/85 leading-[1.7] drop-shadow-md max-w-[480px] mt-7 lg:mt-8 pl-5 border-l-[3px] border-[#A8D8D8]">
                 Reconecta con la tierra, respira aire puro y vive el ritmo pausado de la naturaleza en nuestro espacio eco-rural en Patillas, Puerto Rico.
               </p>
               <button
                 onClick={() => scrollToSection('reserva')}
-                className="inline-block px-8 py-3 bg-[#A8D8D8] rounded-full font-['Oswald',sans-serif] uppercase tracking-[0.1em] font-semibold text-[15px] text-[#1A1A1A] transition-all duration-300 hover:bg-[#92cccc] hover:scale-105 hover:-translate-y-1 mt-10 w-fit shadow-[0_4px_20px_rgba(168,216,216,0.4)] hover:shadow-[0_6px_25px_rgba(168,216,216,0.6)]"
+                className="inline-block px-8 py-3.5 bg-[#A8D8D8] rounded-full font-['Oswald',sans-serif] uppercase tracking-[0.1em] font-semibold text-[15px] text-[#1A1A1A] transition-all duration-300 hover:bg-[#92cccc] hover:scale-105 hover:-translate-y-1 mt-10 lg:mt-12 w-fit shadow-[0_4px_20px_rgba(168,216,216,0.4)] hover:shadow-[0_6px_25px_rgba(168,216,216,0.6)]"
               >
                 Reserva ahora
               </button>
@@ -294,7 +297,7 @@ export default function App() {
                 <span className="font-['Oswald',sans-serif] uppercase tracking-[0.2em] text-[13px] font-semibold text-[#5BAEAE]">
                   Nuestra historia
                 </span>
-                <h2 className="font-['Oswald',sans-serif] font-bold uppercase tracking-[0.01em] text-[#1A1A1A] text-[38px] lg:text-[54px] leading-[1.0]">
+                <h2 className="font-['Oswald',sans-serif] font-bold uppercase tracking-[0.01em] text-[#FF9D25] text-[38px] lg:text-[54px] leading-[1.0]">
                   Hecho con amor
                 </h2>
                 <p className="font-['Lora',serif] font-normal text-[16px] lg:text-[17px] text-[#3A3A3A] leading-[1.8]">
@@ -324,7 +327,7 @@ export default function App() {
               <span className="font-['Oswald',sans-serif] uppercase tracking-[0.2em] text-[13px] font-semibold text-[#2A6E6E]">
                 Vivir Finka Azul
               </span>
-              <h2 className="font-['Oswald',sans-serif] font-bold uppercase tracking-[0.01em] text-[40px] lg:text-[56px] text-[#1A1A1A] leading-[1.0] mt-3 mb-5">
+              <h2 className="font-['Oswald',sans-serif] font-bold uppercase tracking-[0.01em] text-[40px] lg:text-[56px] text-[#FF9D25] leading-[1.0] mt-3 mb-5">
                 La Experiencia
               </h2>
               <p className="font-['Lora',serif] font-normal text-[16px] text-[#2A4A4A] leading-[1.7] max-w-[600px] mx-auto">
@@ -333,18 +336,17 @@ export default function App() {
             </div>
 
             {/* 4 Pillars - Editorial Layout */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-2 gap-y-4 lg:gap-y-0">
               {/* Pillar 1 - Desconexión Real */}
-              <div className="relative pt-6 pb-8 px-5 lg:border-r lg:border-[#1A1A1A]/10">
-                <div className="border-t border-[#1A1A1A]/15 pt-5">
-                  <span className="absolute top-2 left-5 font-['Oswald',sans-serif] font-bold text-[3.5rem] leading-none text-[#1A1A1A]/10 select-none">01</span>
+              <div className="relative pb-8 px-5 lg:border-r lg:border-[#1A1A1A]/10">
+                <div className="border-t border-[#1A1A1A]/15 pt-7">
                   {/* Hand-drawn leaf/branch icon */}
                   <svg className="w-7 h-7 mb-4 text-[#2A6E6E]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M6 21c3-3 7-5 12-5" />
                     <path d="M18 16c-3-8-10-11-16-10 2 5 6 10 16 10z" />
                     <path d="M12 12c-2 2-4 5-4 8" />
                   </svg>
-                  <h3 className="font-['Oswald',sans-serif] font-semibold uppercase tracking-[0.02em] text-[1.05rem] text-[#1A1A1A] leading-[1.2] mb-3">
+                  <h3 className="font-['Oswald',sans-serif] font-semibold uppercase tracking-[0.02em] text-[1.05rem] text-[#FF9D25] leading-[1.2] mb-3">
                     Desconexión Real
                   </h3>
                   <p className="font-['Lora',serif] font-normal text-[0.9rem] text-[#2A4A4A] leading-[1.7]">
@@ -354,9 +356,8 @@ export default function App() {
               </div>
 
               {/* Pillar 2 - Agricultura Sostenible */}
-              <div className="relative pt-6 pb-8 px-5 lg:border-r lg:border-[#1A1A1A]/10">
-                <div className="border-t border-[#1A1A1A]/15 pt-5">
-                  <span className="absolute top-2 left-5 font-['Oswald',sans-serif] font-bold text-[3.5rem] leading-none text-[#1A1A1A]/10 select-none">02</span>
+              <div className="relative pb-8 px-5 lg:border-r lg:border-[#1A1A1A]/10">
+                <div className="border-t border-[#1A1A1A]/15 pt-7">
                   {/* Hand-drawn sprout icon */}
                   <svg className="w-7 h-7 mb-4 text-[#2A6E6E]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M12 22V10" />
@@ -364,7 +365,7 @@ export default function App() {
                     <path d="M12 10c2.5-3 7-3.5 9-1-3-1-6 1-9 4" />
                     <path d="M12 6c0-3 2-5 5-5-1 2-2 4-5 5" />
                   </svg>
-                  <h3 className="font-['Oswald',sans-serif] font-semibold uppercase tracking-[0.02em] text-[1.05rem] text-[#1A1A1A] leading-[1.2] mb-3">
+                  <h3 className="font-['Oswald',sans-serif] font-semibold uppercase tracking-[0.02em] text-[1.05rem] text-[#FF9D25] leading-[1.2] mb-3">
                     Agricultura Sostenible
                   </h3>
                   <p className="font-['Lora',serif] font-normal text-[0.9rem] text-[#2A4A4A] leading-[1.7]">
@@ -374,15 +375,14 @@ export default function App() {
               </div>
 
               {/* Pillar 3 - El Agua como Recurso Sagrado */}
-              <div className="relative pt-6 pb-8 px-5 lg:border-r lg:border-[#1A1A1A]/10">
-                <div className="border-t border-[#1A1A1A]/15 pt-5">
-                  <span className="absolute top-2 left-5 font-['Oswald',sans-serif] font-bold text-[3.5rem] leading-none text-[#1A1A1A]/10 select-none">03</span>
+              <div className="relative pb-8 px-5 lg:border-r lg:border-[#1A1A1A]/10">
+                <div className="border-t border-[#1A1A1A]/15 pt-7">
                   {/* Hand-drawn water drop icon */}
                   <svg className="w-7 h-7 mb-4 text-[#2A6E6E]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M12 2c0 0-6 7-6 12a6 6 0 0 0 12 0c0-5-6-12-6-12z" />
                     <path d="M9 15c0.5 1 1.5 2 3 2" />
                   </svg>
-                  <h3 className="font-['Oswald',sans-serif] font-semibold uppercase tracking-[0.02em] text-[1.05rem] text-[#1A1A1A] leading-[1.2] mb-3">
+                  <h3 className="font-['Oswald',sans-serif] font-semibold uppercase tracking-[0.02em] text-[1.05rem] text-[#FF9D25] leading-[1.2] mb-3">
                     El Agua como Recurso Sagrado
                   </h3>
                   <p className="font-['Lora',serif] font-normal text-[0.9rem] text-[#2A4A4A] leading-[1.7]">
@@ -392,9 +392,8 @@ export default function App() {
               </div>
 
               {/* Pillar 4 - Anfitriones que Hacen la Diferencia */}
-              <div className="relative pt-6 pb-8 px-5">
-                <div className="border-t border-[#1A1A1A]/15 pt-5">
-                  <span className="absolute top-2 left-5 font-['Oswald',sans-serif] font-bold text-[3.5rem] leading-none text-[#1A1A1A]/10 select-none">04</span>
+              <div className="relative pb-8 px-5">
+                <div className="border-t border-[#1A1A1A]/15 pt-7">
                   {/* Hand-drawn people silhouettes icon */}
                   <svg className="w-7 h-7 mb-4 text-[#2A6E6E]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <circle cx="9" cy="7" r="3" />
@@ -402,7 +401,7 @@ export default function App() {
                     <path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" />
                     <path d="M17 14c2 0 4 1.5 4 4v3" />
                   </svg>
-                  <h3 className="font-['Oswald',sans-serif] font-semibold uppercase tracking-[0.02em] text-[1.05rem] text-[#1A1A1A] leading-[1.2] mb-3">
+                  <h3 className="font-['Oswald',sans-serif] font-semibold uppercase tracking-[0.02em] text-[1.05rem] text-[#FF9D25] leading-[1.2] mb-3">
                     Anfitriones que Hacen la Diferencia
                   </h3>
                   <p className="font-['Lora',serif] font-normal text-[0.9rem] text-[#2A4A4A] leading-[1.7]">
@@ -432,7 +431,7 @@ export default function App() {
                   <span className="font-['Oswald',sans-serif] uppercase tracking-[0.2em] text-[13px] font-semibold text-[#5BAEAE]">
                     El alojamiento
                   </span>
-                  <h2 className="font-['Oswald',sans-serif] font-bold uppercase tracking-[0.01em] text-[#1A1A1A] text-[38px] lg:text-[54px] leading-[1.0] mt-3 transition-all duration-300">
+                  <h2 className="font-['Oswald',sans-serif] font-bold uppercase tracking-[0.01em] text-[#FF9D25] text-[38px] lg:text-[54px] leading-[1.0] mt-3 transition-all duration-300">
                     Kabaña Azul
                   </h2>
                   <div className="bg-[#A8D8D8] h-[3px] w-[70px] mt-4 mb-6 transition-all duration-500 hover:w-[90px]" />
@@ -452,7 +451,7 @@ export default function App() {
 
                 {/* Amenities */}
                 <div className="pt-4">
-                  <h3 className="font-['Oswald',sans-serif] font-semibold uppercase tracking-[0.08em] text-[18px] text-[#1A1A1A] mb-5">
+                  <h3 className="font-['Oswald',sans-serif] font-semibold uppercase tracking-[0.08em] text-[18px] text-[#FF9D25] mb-5">
                     Incluye
                   </h3>
 
@@ -553,7 +552,7 @@ export default function App() {
                   <span className="font-['Oswald',sans-serif] uppercase tracking-[0.2em] text-[13px] font-semibold text-[#2A6E6E]">
                     Patillas, Puerto Rico
                   </span>
-                  <h2 className="font-['Oswald',sans-serif] font-bold uppercase tracking-[0.01em] text-[34px] lg:text-[48px] text-[#1A1A1A] leading-[1.0] mt-3 transition-all duration-300">
+                  <h2 className="font-['Oswald',sans-serif] font-bold uppercase tracking-[0.01em] text-[34px] lg:text-[48px] text-[#FF9D25] leading-[1.0] mt-3 transition-all duration-300">
                     Donde el mar y la montaña se encuentran
                   </h2>
                   <div className="bg-[#2A6E6E] h-[3px] w-[80px] mt-5 rounded-full" />
@@ -571,7 +570,7 @@ export default function App() {
 
                 {/* Cercano a ti section */}
                 <div className="pt-4 space-y-6">
-                  <h3 className="font-['Oswald',sans-serif] font-semibold uppercase tracking-[0.08em] text-[#1A1A1A] text-[22px] leading-[1.2]">
+                  <h3 className="font-['Oswald',sans-serif] font-semibold uppercase tracking-[0.08em] text-[#FF9D25] text-[22px] leading-[1.2]">
                     Cercano a ti
                   </h3>
 
@@ -663,7 +662,7 @@ export default function App() {
               </span>
 
               {/* Main Heading */}
-              <h2 className="font-['Oswald',sans-serif] font-bold uppercase tracking-[0.01em] text-[40px] lg:text-[58px] text-[#1A1A1A] leading-[0.98] max-w-[760px]">
+              <h2 className="font-['Oswald',sans-serif] font-bold uppercase tracking-[0.01em] text-[40px] lg:text-[58px] text-[#FF9D25] leading-[0.98] max-w-[760px]">
                 Planea tu estancia en Finka Azul
               </h2>
 
@@ -703,7 +702,7 @@ export default function App() {
 
               {/* Contacto */}
               <div>
-                <h3 className="font-['Oswald',sans-serif] font-semibold uppercase tracking-[0.08em] text-[18px] text-[#1A1A1A] mb-4">
+                <h3 className="font-['Oswald',sans-serif] font-semibold uppercase tracking-[0.08em] text-[18px] text-[#FF9D25] mb-4">
                   Contacto
                 </h3>
                 <ul className="space-y-2 font-['Lora',serif] text-[15px] text-[#2A4A4A] leading-[1.6]">
@@ -715,7 +714,7 @@ export default function App() {
 
               {/* Enlaces */}
               <div>
-                <h3 className="font-['Oswald',sans-serif] font-semibold uppercase tracking-[0.08em] text-[18px] text-[#1A1A1A] mb-4">
+                <h3 className="font-['Oswald',sans-serif] font-semibold uppercase tracking-[0.08em] text-[18px] text-[#FF9D25] mb-4">
                   Enlaces
                 </h3>
                 <ul className="space-y-2 font-['Lora',serif] text-[15px]">
