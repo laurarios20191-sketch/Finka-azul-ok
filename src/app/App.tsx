@@ -252,7 +252,7 @@ export default function App() {
             muted
             playsInline
           >
-            <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/video%20hero-5Vzg9fNNMZFPJpaPETrN5zh6vWbigw.mp4" type="video/mp4" />
+            <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/bajo%20final-75PJpxSYagcTuZWtSiTMJAh1dhhsPl.mp4" type="video/mp4" />
             Tu navegador no soporta el elemento de video.
           </video>
 
